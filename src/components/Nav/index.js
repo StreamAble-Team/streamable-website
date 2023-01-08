@@ -5,6 +5,7 @@ import React from "react";
 import Logo from "../../assets/images/logo.png";
 import { Container, ImageContainer, Links } from "./Nav.styles";
 import Search from "./Search";
+import NavProfile from "./Profile";
 
 const NavBar = () => {
   return (
@@ -18,6 +19,7 @@ const NavBar = () => {
         <NavLink href={"/Genres"}>Genres</NavLink>
       </Links>
       <Search />
+      <NavProfile />
     </Container>
   );
 };

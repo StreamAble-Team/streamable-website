@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   background-color: ${({ theme }) => theme.base.navBg};
   border-radius: 0.5rem;
 `;

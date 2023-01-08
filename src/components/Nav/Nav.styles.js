@@ -5,14 +5,13 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   border-bottom: 1px solid ${({ theme }) => theme.base.navBg};
 `;
 
 export const ImageContainer = styled.div`
-  width: 340px;
-  height: 60px;
-  margin: 0 20px;
+  width: 250px;
+  height: 70px;
   & * {
     width: 100%;
     height: 100%;
@@ -26,19 +25,23 @@ export const Links = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 4rem;
-  margin-left: 2rem;
+  margin-left: 5rem;
   flex: 1;
   & a {
     text-decoration: none;
     color: ${({ theme }) => theme.text.primary};
-    font-size: 1.5rem;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out;
-    &:hover {
+    font-size: 1.3rem;
+    font-weight: 400;
+    transition: all 0.15s ease-in-out;
+    &:hover,
+    &:focus,
+    &.active {
       color: ${({ theme }) => theme.text.secondary};
     }
     &.active {
-      color: ${({ theme }) => theme.text.secondary};
+      padding-bottom: 0.25rem;
+      font-weight: 600;
+      border-bottom: 2px solid ${({ theme }) => theme.base.mainColor};
     }
   }
 `;
