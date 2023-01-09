@@ -1,6 +1,6 @@
 import React from "react";
 import useSWR from "swr";
-import { Card } from "../../components";
+import { BoxCard, Card } from "../../components";
 import { api } from "../../utils";
 import { Container, Title, Wrapper } from "../styles";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -15,7 +15,7 @@ const TopRated = () => {
       <Splide
         options={{
           type: "loop",
-          perPage: 6,
+          perPage: 4,
           perMove: 1,
           arrows: false,
           pagination: false,
@@ -34,7 +34,7 @@ const TopRated = () => {
       >
         {data.results.map((anime) => (
           <SplideSlide>
-            <Card key={anime.id} {...anime} />
+            <BoxCard key={anime.id} {...anime} />
           </SplideSlide>
         ))}
       </Splide>

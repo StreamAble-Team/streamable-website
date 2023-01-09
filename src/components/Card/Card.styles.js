@@ -14,10 +14,10 @@ export const CardContainer = styled.div`
   justify-content: space-between;
   gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background: ${({ theme }) => theme.base.navBg};
   &:hover {
-    box-shadow: 0 0 0.25rem 0.25rem ${({ theme }) => theme.base.navBg};
+    box-shadow: 0 0 0.3rem 0.3rem ${({ theme }) => theme.base.navBg};
   }
 `;
 
