@@ -11,16 +11,17 @@ import {
 } from "./Item.styles";
 
 const Item = (props) => {
-  const { setIndex, index } = props;
+  const { setIndex, index, setRef } = props;
   const title =
     props.title?.english || props.title?.romaji || props.title?.native;
+  const rating = !props?.rating ? "??" : (props?.rating / 10)?.toFixed(1);
 
   const changeIndex = useCallback(() => {
     setIndex(index);
   }, []);
 
   return (
-    <Container active={props.active} onClick={changeIndex}>
+    <Container active={props.active} onClick={changeIndex} ref={setRef}>
       <LeftContainer>
         <ImageContainer>
           <Image src={props.image} alt="Logo" />
@@ -29,7 +30,7 @@ const Item = (props) => {
       <RightContainer>
         <Title>{title}</Title>
         <Subtitle>{props?.releaseDate}</Subtitle>
-        <Rating>{(props?.rating / 10)?.toFixed(1)}</Rating>
+        <Rating>{rating}</Rating>
       </RightContainer>
     </Container>
   );

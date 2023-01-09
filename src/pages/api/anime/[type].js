@@ -22,6 +22,26 @@ export default async function handler(req, res) {
         notYetAired
       );
       break;
+    case "top-rated":
+      results = await api.anilist.advancedSearch(
+        null,
+        "ANIME",
+        page,
+        perPage,
+        "TV",
+        ["SCORE_DESC"]
+      );
+      break;
+    case "upcoming":
+      results = await api.anilist.advancedSearch(
+        null,
+        "ANIME",
+        page,
+        perPage,
+        "TV",
+        ["START_DATE_DESC"]
+      );
+      break;
     default:
       results = await api.anilist.fetchRandomAnime();
       break;

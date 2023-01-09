@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  padding: 0 3rem;
   border-bottom: 4px solid ${({ theme }) => theme.base.navBg};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;

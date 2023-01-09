@@ -11,4 +11,8 @@ export const Container = styled.div`
   gap: 2rem;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 1600px) {
+    height: 450px;
+  }
 `;
