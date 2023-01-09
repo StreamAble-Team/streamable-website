@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  border-bottom: 4px solid ${({ theme }) => theme.base.navBg};
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+`;
+
+export const Wrapper = styled.div`
   max-width: 1750px;
   margin: 0 auto;
   display: flex;
@@ -8,7 +13,6 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
-  border-bottom: 1px solid ${({ theme }) => theme.base.navBg};
 `;
 
 export const ImageContainer = styled.div`
