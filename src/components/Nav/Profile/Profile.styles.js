@@ -3,7 +3,7 @@ import { FaArrowDown } from "react-icons/fa";
 
 export const Container = styled.div`
   height: 60px;
-  width: 75px;
+  width: 100px;
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: ${({ theme }) => theme.base.navBg};
@@ -22,7 +22,7 @@ export const Container = styled.div`
 
 export const Icon = styled(FaArrowDown)`
   color: ${({ theme }) => theme.text.primary};
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-left: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
