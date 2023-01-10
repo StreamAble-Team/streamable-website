@@ -1,43 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import useSWR from "swr";
-import { BoxCard, Card } from "../../components";
+import { BoxRow } from "..";
 import { api } from "../../utils";
-import { Container, Title, Wrapper } from "../styles";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import {
+  Arrow,
+  Arrows,
+  Container,
+  LeftArrow,
+  RightArrow,
+  Title,
+  TitleWrapper,
+  Wrapper,
+} from "../styles";
 
 const TopRated = () => {
+  const splideRef = useRef(null);
   const { data, error } = useSWR("/api/anime/top-rated", api.fetcher);
 
   if (!data || error) return null;
   return (
     <Container>
-      <Title>Top Rated</Title>
-      <Splide
-        options={{
-          type: "loop",
-          perPage: 4,
-          perMove: 1,
-          arrows: false,
-          pagination: false,
-          breakpoints: {
-            1024: {
-              perPage: 4,
-            },
-            768: {
-              perPage: 3,
-            },
-            640: {
-              perPage: 2,
-            },
-          },
-        }}
-      >
-        {data.results.map((anime) => (
-          <SplideSlide>
-            <BoxCard key={anime.id} {...anime} />
-          </SplideSlide>
-        ))}
-      </Splide>
+      <TitleWrapper>
+        <Title>Top Rated</Title>
+        <Arrows>
+          <Arrow onClick={() => splideRef.current.splide.go("<")}>
+            <LeftArrow />
+          </Arrow>
+          <Arrow onClick={() => splideRef.current.splide.go(">")}>
+            <RightArrow />
+          </Arrow>
+        </Arrows>
+      </TitleWrapper>
+      <BoxRow data={data?.results} splideRef={splideRef} key={`top-rated`} />
     </Container>
   );
 };

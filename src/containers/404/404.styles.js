@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -49,7 +50,7 @@ export const SubText = styled.p`
   color: ${({ theme }) => theme.text.offWhite};
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   margin-top: 2rem;
   padding: 0.5rem 1rem;
   border: none;

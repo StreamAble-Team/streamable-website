@@ -21,7 +21,7 @@ const Four0FourContainer = () => {
         <Title>Error 404</Title>
         <SubText>Sorry, page not found.</SubText>
         <SubText>go back to the home page</SubText>
-        <Button>Go back home</Button>
+        <Button href={"/"}>Go back home</Button>
       </RightContainer>
     </Container>
   );
