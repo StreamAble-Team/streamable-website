@@ -12,12 +12,12 @@ import {
 } from "./Card.styles";
 
 const Card = (props) => {
-  let { title, image, rating } = props;
+  let { id, title, image, rating } = props;
   title = title?.english || title?.romaji || title?.native;
   rating = rating / 10 === 0 ? "??" : (rating / 10).toFixed(1);
 
   return (
-    <CardContainer>
+    <CardContainer href={`/info/${id}`}>
       <TopContainer>
         <ImageContainer background={image} />
       </TopContainer>

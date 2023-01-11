@@ -4,6 +4,7 @@ import React from "react";
 
 const NavLink = ({ children, href }) => {
   const router = useRouter();
+  console.log(router.pathname);
 
   return (
     <Link href={href} className={router.pathname === href ? "active" : ""}>

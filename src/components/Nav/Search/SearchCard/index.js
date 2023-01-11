@@ -11,10 +11,11 @@ import {
 } from "./SearchCard.styles";
 
 const SearchCard = (props) => {
-  let { id, title, image, cover, genres, releaseDate } = props;
+  let { id, title, image, cover, genres, releaseDate, handleHide } = props;
   title = title?.english || title?.romaji || title?.native;
+
   return (
-    <Container>
+    <Container href={`/info/${id}`} onClick={handleHide}>
       <ImageContainer src={image} />
       <TitleContainer>
         <Title>{title}</Title>

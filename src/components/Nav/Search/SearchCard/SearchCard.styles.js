@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const ImageContainer = styled.div`
@@ -63,7 +64,7 @@ export const ReleaseDate = styled.span`
   color: ${({ theme }) => theme.text.secondary};
 `;
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   width: 100%;
   height: 50px;
   display: flex;

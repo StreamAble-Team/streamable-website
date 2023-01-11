@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import React from "react";
 import useSWR from "swr";
-import { api } from "../../utils";
-import { Container } from "../../styles/shared";
-import { InfoContainer } from "../../containers";
+import { api } from "../../../utils";
+import { Container } from "../../../styles/shared";
+import { InfoContainer } from "../../../containers";
+import { Episodes } from "../../../components";
 
 const Info = () => {
   const router = useRouter();

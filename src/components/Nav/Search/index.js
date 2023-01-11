@@ -32,6 +32,7 @@ const Search = () => {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         searchResults={searchResults}
+        setSearchResults={setSearchResults}
       />
     </SearchContainer>
   );

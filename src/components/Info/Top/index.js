@@ -1,5 +1,8 @@
 import React from "react";
 import {
+  Button,
+  ButtonIcon,
+  ButtonsContainer,
   Description,
   Image,
   ImageContainer,
@@ -10,6 +13,7 @@ import {
   RatingContainer,
   RatingIcon,
   RightContainer,
+  ShareIcon,
   Title,
   TitleContainer,
 } from "./Top.styles";
@@ -25,25 +29,34 @@ const InfoTop = (props) => {
   return (
     <InfoTopContainer>
       <LeftContainer>
+        <ImageContainer>
+          <Image src={image} />
+        </ImageContainer>
+      </LeftContainer>
+      <RightContainer>
         <TitleContainer>
           <Title>{title}</Title>
           <MetaInfoItem>
-            {totalEpisodes >= 0 ? `${totalEpisodes} Episodes` : "??"}
+            {totalEpisodes && totalEpisodes >= 0
+              ? `${totalEpisodes} Episodes`
+              : "??"}
           </MetaInfoItem>
           <MetaInfoItem>
             {subOrDub === "sub" ? `Subbed` : `Dubbed`}
           </MetaInfoItem>
         </TitleContainer>
-        <RatingContainer>
+        <Description>{parsed}</Description>
+        {/* <RatingContainer>
           <RatingIcon />
           <Rating>{rating}</Rating>
-        </RatingContainer>
-        <Description>{parsed}</Description>
-      </LeftContainer>
-      <RightContainer>
-        <ImageContainer>
-          <Image src={image} />
-        </ImageContainer>
+        </RatingContainer> */}
+        <ButtonsContainer>
+          <Button main={true}>Watch Now</Button>
+          <Button>
+            <ShareIcon />
+            <span>Share</span>
+          </Button>
+        </ButtonsContainer>
       </RightContainer>
     </InfoTopContainer>
   );

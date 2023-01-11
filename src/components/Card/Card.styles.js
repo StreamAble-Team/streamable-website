@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const TopContainer = styled.div`
@@ -57,7 +58,7 @@ export const Rating = styled.span`
   font-size: 0.8rem;
   font-weight: 400;
 `;
-export const CardContainer = styled.div`
+export const CardContainer = styled(Link)`
   width: 200px;
   height: 350px;
   overflow: hidden;
