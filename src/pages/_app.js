@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../styles/global";
 import { darkTheme } from "../assets/themes/dark";
 import { NavBar } from "../components";
-
+import "@vidstack/player/hydrate.js";
 import "../styles/reset.css";
 
 export default function App({ Component, pageProps }) {

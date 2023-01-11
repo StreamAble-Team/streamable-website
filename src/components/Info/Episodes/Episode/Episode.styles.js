@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const ImageContainer = styled.div`
@@ -41,7 +42,7 @@ export const SubTitle = styled.p`
   white-space: nowrap;
 `;
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   max-width: 250px;
   height: 200px;
   background-color: ${({ theme }) => theme.base.navBg};

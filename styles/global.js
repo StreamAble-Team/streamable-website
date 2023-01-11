@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${({ theme }) => rgba(theme.base.mainColor, 0.5)};
       border-radius: 1rem;
     }
+    
 `;
 
 export default GlobalStyle;

@@ -8,7 +8,7 @@ const NavProfile = () => {
   return (
     <Container>
       <Image src={Picture} alt="Profile Picture" />
-      <Icon />
+      {/* <Icon /> */}
     </Container>
   );
 };

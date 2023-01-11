@@ -39,11 +39,13 @@ export const Title = styled.h1`
 `;
 
 export const MetaInfoItem = styled.span`
+  position: relative;
   font-size: 1rem;
   color: ${({ theme }) => theme.text.primary};
   background-color: ${({ theme }) => theme.base.navBg};
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
 `;
 
 export const RatingContainer = styled.div`
@@ -87,6 +89,7 @@ export const ImageContainer = styled.div`
   border-radius: 1rem;
   overflow: hidden;
   border: 10px solid ${({ theme }) => theme.base.navBg};
+  background-color: ${({ theme }) => theme.base.navBg};
 `;
 
 export const Image = styled.div`

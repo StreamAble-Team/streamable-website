@@ -8,10 +8,11 @@ import {
 } from "./Episode.styles";
 
 const Episode = (props) => {
-  let { id, title, episode, image, number, backupImage } = props;
+  let { id, title, episode, image, number, backupImage, href } = props;
 
+  console.log(id);
   return (
-    <Container>
+    <Container href={href}>
       <ImageContainer src={!image ? backupImage : image} />
       <InfoContainer>
         <Title>

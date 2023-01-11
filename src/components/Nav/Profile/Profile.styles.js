@@ -2,21 +2,26 @@ import styled from "styled-components";
 import { FaArrowDown } from "react-icons/fa";
 
 export const Container = styled.div`
+  width: 60px;
   height: 60px;
-  width: 100px;
   border-radius: 0.5rem;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.base.navBg};
   display: flex;
-  padding: 0 1rem;
+  // padding: 0 1rem;
   justify-content: center;
   align-items: center;
   margin-left: 20px;
+  border: 8px solid ${({ theme }) => theme.base.navBg};
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
   & img {
-    border-radius: 0.25rem;
-    width: 60%;
-    height: 60%;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+  }
+  &:hover {
+    border: 4px solid ${({ theme }) => theme.base.navBg};
   }
 `;
 
