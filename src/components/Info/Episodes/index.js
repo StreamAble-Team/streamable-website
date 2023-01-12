@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import Episode from "./Episode/inedx";
 import {
@@ -10,6 +11,8 @@ import {
 } from "./Episodes.styles";
 
 const Episodes = ({ episodes, cover, id }) => {
+  const router = useRouter();
+  const { episode } = router.query;
   const [page, setPage] = React.useState(1);
   const [itemsPerPage, setItemsPerPage] = React.useState(50);
   const [totalPages, setTotalPages] = React.useState(1);
@@ -38,9 +41,6 @@ const Episodes = ({ episodes, cover, id }) => {
 
   if (!episodes) return null;
   if (!episodes.length) return null;
-  const onChange = (e) => {
-    console.log(e);
-  };
 
   // create dynamic options for select with value = new page start and length
   const options = [];
@@ -59,25 +59,30 @@ const Episodes = ({ episodes, cover, id }) => {
         <Title>Episodes</Title>
       </TitleContainer> */}
       <EpisodeSelectContainer>
-        {options.map((option) => (
-          <EpisodePill
-            key={option.value}
-            onClick={() => setPage(option.value)}
-            active={option.value === page}
-          >
-            {option.label}
-          </EpisodePill>
-        ))}
+        {options.length > 1
+          ? options.map((option) => (
+              <EpisodePill
+                key={option.value}
+                onClick={() => setPage(option.value)}
+                active={option.value === page}
+              >
+                {option.label}
+              </EpisodePill>
+            ))
+          : null}
       </EpisodeSelectContainer>
       <EpisodesList>
-        {pageData.map((episode) => (
-          <Episode
-            key={episode.id}
-            {...episode}
-            backupImage={cover}
-            href={`/info/${id}/${episode?.number}`}
-          />
-        ))}
+        {pageData.map((ep) => {
+          return (
+            <Episode
+              key={ep.id}
+              {...ep}
+              backupImage={cover}
+              href={`/info/${id}/${ep?.number}`}
+              active={Number(ep?.number) === Number(episode)}
+            />
+          );
+        })}
       </EpisodesList>
     </EpisodesContainer>
   );

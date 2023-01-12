@@ -16,7 +16,7 @@ const LeftSideBanner = ({ data }) => {
     .textContent;
 
   return (
-    <Container>
+    <Container href={`/info/${data?.id}`}>
       <Item background={data?.cover}>
         <Wrapper>
           <ItemContainer>

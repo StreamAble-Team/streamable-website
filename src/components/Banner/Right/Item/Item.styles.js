@@ -1,3 +1,4 @@
+import { FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -71,4 +72,30 @@ export const Subtitle = styled.h2`
   -webkit-box-orient: vertical;
 `;
 
-export const Rating = styled.p``;
+export const RatingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+`;
+
+export const RatingIcon = styled(FaStar)`
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.base.mainColor};
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+`;
+
+export const Rating = styled.span`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.text.primary};
+  margin-right: 0.5rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+`;

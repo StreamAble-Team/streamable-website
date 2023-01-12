@@ -1,11 +1,5 @@
+import Link from "next/link";
 import styled from "styled-components";
-
-export const Container = styled.div`
-  width: 80%;
-  height: 100%;
-  border-radius: 1rem;
-  overflow: hidden;
-`;
 
 export const Item = styled.div`
   width: 100%;
@@ -21,6 +15,7 @@ export const Wrapper = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
+  transition: background 0.2s ease-in-out;
 `;
 
 export const ItemContainer = styled.div`
@@ -34,11 +29,15 @@ export const ItemContainer = styled.div`
 `;
 
 export const Title = styled.h1`
+  width: 100%;
   font-family: ${({ theme }) => theme.text.fonts.secondary};
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1rem;
   text-transform: lowercase;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 
   &:first-letter {
     text-transform: uppercase;
@@ -58,4 +57,23 @@ export const Description = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
   height: 112px;
+`;
+
+export const Container = styled(Link)`
+  width: 80%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover,
+  &:focus {
+    border-bottom: 4px solid ${({ theme }) => theme.base.mainColor};
+  }
+  &:hover ${Title}, &:focus ${Title} {
+    text-decoration: underline;
+  }
+  &:hover ${Wrapper}, &:focus ${Wrapper} {
+    background: rgba(0, 0, 0, 0.75);
+  }
 `;

@@ -35,6 +35,9 @@ export const Title = styled.h3`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Genres = styled.div`
@@ -51,6 +54,9 @@ export const Genre = styled.span`
   &:last-child {
     margin-right: 0;
   }
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const RatingContainer = styled.div`
@@ -65,6 +71,9 @@ export const RatingContainer = styled.div`
 export const RatingIcon = styled(FaStar)`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.base.mainColor};
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Rating = styled.span`
@@ -74,7 +83,11 @@ export const Rating = styled.span`
   &:last-child {
     margin-right: 0;
   }
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
+
 export const BoxCardContainer = styled.div`
   width: 330px;
   height: 270px;
@@ -89,5 +102,9 @@ export const BoxCardContainer = styled.div`
   }
   &:hover ${TopContainer} {
     transform: scale(1.05);
+  }
+  @media (max-width: 768px) {
+    width: 260px;
+    height: 230px;
   }
 `;

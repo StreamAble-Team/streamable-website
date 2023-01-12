@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaShare, FaShareAlt, FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
@@ -6,16 +7,26 @@ export const InfoTopContainer = styled.div`
   padding: 1rem 0;
   padding-top: 1.5rem;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   gap: 3rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftContainer = styled.div`
   width: 20%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const RightContainer = styled.div`
   width: 80%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -25,6 +36,10 @@ export const TitleContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 1.3rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const Title = styled.h1`
@@ -36,6 +51,10 @@ export const Title = styled.h1`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    font-size: 1.8rem;
+  }
 `;
 
 export const MetaInfoItem = styled.span`
@@ -46,6 +65,16 @@ export const MetaInfoItem = styled.span`
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+    height: 45px;
+  }
 `;
 
 export const RatingContainer = styled.div`
@@ -111,10 +140,14 @@ export const ButtonsContainer = styled.div`
   align-items: center;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
-export const Button = styled.button`
-display: flex;
+export const Button = styled(Link)`
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
@@ -130,6 +163,9 @@ display: flex;
   transition: opacity 0.3s ease-in-out;
   &:hover {
     opacity: 0.8;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 

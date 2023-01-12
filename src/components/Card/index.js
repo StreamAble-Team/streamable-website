@@ -6,6 +6,8 @@ import {
   Genres,
   ImageContainer,
   Rating,
+  RatingContainer,
+  RatingIcon,
   Title,
   TopContainer,
   Wrapper,
@@ -30,7 +32,10 @@ const Card = (props) => {
             props.genres.map((genre) => <Genre key={genre}>{genre}</Genre>)
           )}
         </Genres>
-        <Rating>{rating}</Rating>
+        <RatingContainer>
+          {rating !== "??" ? <RatingIcon /> : null}
+          <Rating>{rating}</Rating>
+        </RatingContainer>
       </BottomContainer>
     </CardContainer>
   );

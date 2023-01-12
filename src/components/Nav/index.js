@@ -16,11 +16,11 @@ const NavBar = () => {
         </ImageContainer>
         <Links>
           <NavLink href={"/"}>Home</NavLink>
-          <NavLink href={"/Anime"}>Anime</NavLink>
-          <NavLink href={"/Genres"}>Genres</NavLink>
+          <NavLink href={"/anime"}>Anime</NavLink>
+          {/* <NavLink href={"/genres"}>Genres</NavLink> */}
         </Links>
         <Search />
-        <NavProfile />
+        {/* <NavProfile /> */}
       </Wrapper>
     </Container>
   );

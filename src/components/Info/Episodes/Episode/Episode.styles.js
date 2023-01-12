@@ -46,6 +46,8 @@ export const Container = styled(Link)`
   max-width: 250px;
   height: 200px;
   background-color: ${({ theme }) => theme.base.navBg};
+  border: ${({ active, theme }) =>
+    !active ? "none" : `3px solid ${theme.base.mainColor}`};
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;

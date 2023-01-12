@@ -1,13 +1,24 @@
 import React from "react";
-import { Episodes, Player } from "../../components";
-import { Container, EpisodesContainer, VideoContainer } from "./Watch.styles";
+import { Episodes, Player, RightInfo } from "../../components";
+import {
+  Container,
+  EpisodesContainer,
+  TopContainer,
+  VideoContainer,
+} from "./Watch.styles";
 
 const WatchContainer = ({ data }) => {
+  if (!data) return null;
+
+  console.log(data?.episodes);
   return (
     <Container>
-      <VideoContainer>
-        <Player data={data} />
-      </VideoContainer>
+      <TopContainer>
+        <VideoContainer>
+          <Player data={data} />
+        </VideoContainer>
+        <RightInfo {...data} />
+      </TopContainer>
       <EpisodesContainer>
         <Episodes {...data} />
       </EpisodesContainer>

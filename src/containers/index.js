@@ -4,5 +4,13 @@ import CardRow from "./CardRow";
 import BoxRow from "./BoxRow";
 import InfoContainer from "./Info";
 import WatchContainer from "./Watch";
-
-export { Upcoming, TopRated, CardRow, BoxRow, InfoContainer, WatchContainer };
+import Popular from "./Popular";
+export {
+  Popular,
+  Upcoming,
+  TopRated,
+  CardRow,
+  BoxRow,
+  InfoContainer,
+  WatchContainer,
+};

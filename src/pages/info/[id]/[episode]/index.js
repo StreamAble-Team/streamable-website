@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import useSWR from "swr";
@@ -7,18 +8,17 @@ import { api } from "../../../../utils";
 
 const EpisodePage = () => {
   const router = useRouter();
-  const { id, episode, dub } = router.query;
+  const { id, episode, dub = false } = router.query;
 
   if (!id) return null;
 
-  // get info data from "/api/anime/info/${episode}" wait for it to load then get watch data from "/api/anime/watch/${episode}/${episode}?dub=${dub}"
-  const { data: infoData } = useSWR(
+  let { data: infoData, mutate: mutateInfo } = useSWR(
     `/api/anime/info/${id}?dub=${dub || false}`,
     api.fetcher
   );
 
-  const { data: watchData } = useSWR(
-    () => (!infoData ? null : `/api/anime/watch/` + infoData?.episodes[0].id),
+  let { data: watchData, mutate: mutateWatch } = useSWR(
+    !infoData ? null : `/api/anime/watch/` + infoData?.episodes[episode - 1].id,
     api.fetcher
   );
 
@@ -26,9 +26,17 @@ const EpisodePage = () => {
 
   if (!data) return null;
   return (
-    <Container>
-      <WatchContainer data={data} />
-    </Container>
+    <>
+      <Head>
+        <title>
+          {data?.title?.english || data?.title?.romaji || data?.title?.native}
+        </title>
+      </Head>
+      <Container>
+        <WatchContainer data={data} />
+        {/* <WatchContainer /> */}
+      </Container>
+    </>
   );
 };
 

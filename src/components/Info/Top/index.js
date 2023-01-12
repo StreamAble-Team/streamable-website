@@ -19,7 +19,8 @@ import {
 } from "./Top.styles";
 
 const InfoTop = (props) => {
-  let { title, totalEpisodes, subOrDub, description, image, rating } = props;
+  let { title, totalEpisodes, subOrDub, description, image, rating, id } =
+    props;
   title = title?.english || title?.romaji || title?.native;
   rating = !rating ? "??" : (rating / 10)?.toFixed(1);
   const parser = new DOMParser();
@@ -51,8 +52,10 @@ const InfoTop = (props) => {
           <Rating>{rating}</Rating>
         </RatingContainer> */}
         <ButtonsContainer>
-          <Button main={true}>Watch Now</Button>
-          <Button>
+          <Button main={true} href={`/info/${id}/1`}>
+            Watch Now
+          </Button>
+          <Button href={`#`}>
             <ShareIcon />
             <span>Share</span>
           </Button>

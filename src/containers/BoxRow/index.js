@@ -23,6 +23,10 @@ const CardRow = ({ data, splideRef, key }) => {
           640: {
             perPage: 2,
           },
+          480: {
+            autoWidth: true,
+            perPage: 1,
+          },
         },
       }}
     >

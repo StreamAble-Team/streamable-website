@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
 export const TopContainer = styled.div`
@@ -35,6 +36,9 @@ export const Title = styled.h1`
   overflow: hidden;
   display: block;
   text-overflow: ellipsis;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Genres = styled.div`
@@ -52,12 +56,39 @@ export const Genre = styled.span`
   &:last-child {
     margin-right: 0;
   }
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+`;
+
+export const RatingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+`;
+
+export const RatingIcon = styled(FaStar)`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.base.mainColor};
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Rating = styled.span`
-  font-size: 0.8rem;
-  font-weight: 400;
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.text.primary};
+  margin-right: 0.5rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
+
 export const CardContainer = styled(Link)`
   width: 200px;
   height: 350px;
@@ -79,5 +110,9 @@ export const CardContainer = styled(Link)`
   }
   &:hover ${TopContainer} {
     transform: scale(1.05);
+  }
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 310px;
   }
 `;

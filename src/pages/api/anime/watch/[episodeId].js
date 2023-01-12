@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     anilist = new META.Anilist(possibleProvider);
   }
 
-  let results = await anilist.fetchEpisodeSources(episodeId, server);
+  let results = await anilist.fetchEpisodeSources(episodeId);
 
   res.status(200).json(results);
 }

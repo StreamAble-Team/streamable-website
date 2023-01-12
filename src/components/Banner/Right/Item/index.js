@@ -5,6 +5,8 @@ import {
   ImageContainer,
   LeftContainer,
   Rating,
+  RatingContainer,
+  RatingIcon,
   RightContainer,
   Subtitle,
   Title,
@@ -30,7 +32,10 @@ const Item = (props) => {
       <RightContainer>
         <Title>{title}</Title>
         <Subtitle>{props?.releaseDate}</Subtitle>
-        <Rating>{rating}</Rating>
+        <RatingContainer>
+          {rating !== "??" ? <RatingIcon /> : null}
+          <Rating>{rating}</Rating>
+        </RatingContainer>
       </RightContainer>
     </Container>
   );
