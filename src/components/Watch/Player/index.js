@@ -1,31 +1,22 @@
-import { AspectRatio, Hls, Media } from "@vidstack/player-react";
 import React from "react";
 import { Container } from "./Player.styles";
+import { Hls, Media, AspectRatio } from "@vidstack/player-react";
+import VideoControls from "./controls";
+import CustomGesture from "./controls/CustomGesture";
+import VideoPoster from "./Poster";
 
-const Player = ({ data }) => {
-  const { sources, cover } = data;
-
-  if (!sources) return null;
-  const proxyURL = `https://cors.proxy.consumet.org`;
-
-  //find highest quality in sources but override if 1080p is available
-  const findHighest = sources.reduce((prev, current) => {
-    return prev.quality > current.quality ? prev : current;
-  });
-
+const Player = ({ url, proxy, poster, title, subTitle }) => {
+  if (!url) return null;
   return (
     <Container>
       <Media>
+        <VideoPoster />
+        <CustomGesture />
         <AspectRatio ratio="16/9">
-          <Hls controls={true}>
-            <video
-              src={`${proxyURL}/${findHighest.url}`}
-              // src={findHighest.url}
-              preload="metadata"
-              controls
-              data-video="0"
-            />
+          <Hls poster={poster}>
+            <video src={proxy ? `${proxy}/${url}` : url} preload="all" />
           </Hls>
+          <VideoControls title={title} subTitle={subTitle} />
         </AspectRatio>
       </Media>
     </Container>

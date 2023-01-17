@@ -14,12 +14,18 @@ const EpisodePage = () => {
 
   let { data: infoData, mutate: mutateInfo } = useSWR(
     `/api/anime/info/${id}?dub=${dub || false}`,
-    api.fetcher
+    api.fetcher,
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   let { data: watchData, mutate: mutateWatch } = useSWR(
     !infoData ? null : `/api/anime/watch/` + infoData?.episodes[episode - 1].id,
-    api.fetcher
+    api.fetcher,
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   const data = { ...infoData, ...watchData };

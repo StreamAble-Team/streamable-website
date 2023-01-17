@@ -8,6 +8,9 @@ export const darkTheme = {
     darkBg: "#0f0f0f",
     offDarkBg: "#212121",
   },
+  videoPlayer: {
+    iconSize: "1.6rem",
+  },
   text: {
     primary: "#fff",
     secondary: "#969695",

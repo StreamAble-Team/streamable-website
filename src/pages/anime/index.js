@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import { Popular, TopRated, Upcoming } from "../../containers";
+import { AnimePageContainer } from "../../styles/anime.styles";
 import { Container } from "../../styles/shared";
-import { AnimePageContainer } from "./anime.styles";
 
 const AnimePage = () => {
   return (
