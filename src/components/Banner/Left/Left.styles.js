@@ -76,4 +76,7 @@ export const Container = styled(Link)`
   &:hover ${Wrapper}, &:focus ${Wrapper} {
     background: rgba(0, 0, 0, 0.75);
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;

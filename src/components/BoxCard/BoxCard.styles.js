@@ -103,8 +103,8 @@ export const BoxCardContainer = styled.div`
   &:hover ${TopContainer} {
     transform: scale(1.05);
   }
-  @media (max-width: 768px) {
-    width: 260px;
-    height: 230px;
+  @media (max-width: 1700px) {
+    width: 300px;
+    height: 250px;
   }
 `;

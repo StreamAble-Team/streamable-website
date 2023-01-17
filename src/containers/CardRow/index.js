@@ -14,10 +14,13 @@ const CardRow = ({ data, splideRef, key }) => {
         pagination: false,
         gap: "2.3rem",
         breakpoints: {
-          1024: {
+          1380: {
+            perPage: 5,
+          },
+          1044: {
             perPage: 4,
           },
-          768: {
+          890: {
             perPage: 3,
           },
           640: {

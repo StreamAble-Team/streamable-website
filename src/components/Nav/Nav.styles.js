@@ -14,6 +14,9 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -50,5 +53,8 @@ export const Links = styled.div`
       font-weight: 600;
       border-bottom: 2px solid ${({ theme }) => theme.base.mainColor};
     }
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
