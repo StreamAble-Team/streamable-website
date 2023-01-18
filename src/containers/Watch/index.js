@@ -15,9 +15,8 @@ const WatchContainer = ({ data }) => {
   if (!data) return null;
 
   //find highest quality
-  const highestQuality = sources?.reduce((prev, current) =>
-    prev.quality > current.quality ? prev : current
-  );
+  const highestQuality =
+    sources?.find((source) => source.quality === "1080p") || sources[0];
 
   const findEpisode = episodes?.find(
     (ep) => Number(ep.number) === Number(episode)
