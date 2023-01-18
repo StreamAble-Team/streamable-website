@@ -26,6 +26,10 @@ export const ItemContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h1`

@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Title = styled.h1`

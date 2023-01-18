@@ -6,6 +6,7 @@ export const Container = styled.div`
 `;
 
 export const VideoContainer = styled.div`
+  width: 100%;
   aspect-ratio: 16 / 9;
   display: flex;
   flex-direction: column;

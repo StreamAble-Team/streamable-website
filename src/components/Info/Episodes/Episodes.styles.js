@@ -9,10 +9,14 @@ export const EpisodesContainer = styled.div`
 
 export const EpisodesList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1.5rem;
   justify-items: space-between;
-  align-content: space-between;
+  align-content: center;
+  @media (max-width: 568px) {
+    justify-items: center;
+    align-content: center;
+  }
 `;
 
 export const TitleContainer = styled.div`

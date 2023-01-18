@@ -50,7 +50,7 @@ export const Image = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 700;
   color: ${({ theme }) => theme.text.primary};
   font-family: ${({ theme }) => theme.text.fonts.secondary};

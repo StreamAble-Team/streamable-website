@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  min-width: 100px;
+  max-width: 400px;
   height: 100%;
   background-image: url(${({ src }) => src});
   border: 4px solid ${({ theme }) => theme.base.navBg};
@@ -11,11 +13,18 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   border-radius: 0.5rem;
   overflow: hidden;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  min-width: 300px;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
