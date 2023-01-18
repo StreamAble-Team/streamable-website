@@ -15,13 +15,22 @@ const WatchContainer = ({ data }) => {
   if (!data) return null;
 
   //find highest quality
-  const highestQuality =
-    sources?.find((source) => source.quality === "1080p") || sources[0];
+  let highestQuality = sources?.find(
+    (source) =>
+      source.quality.includes("1080") ||
+      source.quality.includes("720") ||
+      source.quality.includes("default")
+  );
+  if (!highestQuality) {
+    if (sources?.length) highestQuality = sources[0];
+    highestQuality = "";
+  }
 
   const findEpisode = episodes?.find(
     (ep) => Number(ep.number) === Number(episode)
   );
 
+  console.log({ highestQuality });
   const proxy = `https://cors.proxy.consumet.org`;
   return (
     <Container>
