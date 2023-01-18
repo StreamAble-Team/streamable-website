@@ -78,6 +78,9 @@ export const Genres = styled.div`
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const Genre = styled.span`

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 2rem;
+  margin: 2rem 0;
 `;
 
 export const VideoContainer = styled.div`
@@ -25,10 +25,10 @@ export const TopContainer = styled.div`
   gap: 3rem;
 
   @media (min-width: 1400px) {
-    height: 580px;
+    height: 600px;
   }
   @media (min-width: 1600px) {
-    height: 620px;
+    height: 720px;
   }
 `;
 
