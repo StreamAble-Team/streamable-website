@@ -21,8 +21,14 @@ export const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   gap: 3rem;
+
+  @media (min-width: 1400px) {
+    height: 580px;
+  }
+  @media (min-width: 1600px) {
+    height: 620px;
+  }
 `;
 
 export const EpisodesContainer = styled.div`

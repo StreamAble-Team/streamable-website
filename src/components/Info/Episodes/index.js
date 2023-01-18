@@ -11,7 +11,6 @@ import {
 } from "./Episodes.styles";
 
 const Episodes = ({ episodes, cover, id, subOrDub }) => {
-  console.log({ subOrDub });
   const router = useRouter();
   const { episode } = router.query;
   const [page, setPage] = React.useState(1);

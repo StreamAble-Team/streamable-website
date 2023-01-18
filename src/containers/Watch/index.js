@@ -30,7 +30,6 @@ const WatchContainer = ({ data }) => {
     (ep) => Number(ep.number) === Number(episode)
   );
 
-  console.log({ highestQuality });
   const proxy = `https://cors.proxy.consumet.org`;
   return (
     <Container>
