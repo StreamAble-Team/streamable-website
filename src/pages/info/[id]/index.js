@@ -18,7 +18,8 @@ const Info = () => {
   );
 
   const parser = new DOMParser();
-  const parsed = parser.parseFromString(data?.description, "text/html");
+  const parsed = parser.parseFromString(data?.description, "text/html").body
+    .textContent;
 
   const proxy = `https://cors.proxy.consumet.org`;
 
