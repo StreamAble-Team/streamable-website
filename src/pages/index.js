@@ -11,6 +11,16 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta property="og:title" content="StreamAble" />
+        <meta
+          property="og:description"
+          content="Watch anime series and movies for free"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content="StreamAble" />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image:alt" content="StreamAble" />
+        <meta property="og:image:type" content="small" />
         <title>Streamable - Home</title>
       </Head>
       <Container>

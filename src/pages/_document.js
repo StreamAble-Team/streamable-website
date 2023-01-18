@@ -15,16 +15,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet"
         />
-        <meta property="og:title" content="StreamAble" />
-        <meta
-          property="og:description"
-          content="Watch anime series and movies for free"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:site_name" content="StreamAble" />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:image:alt" content="StreamAble" />
-        <meta property="og:image:type" content="small" />
+
         <meta
           name="keywords"
           content="watch animes, animes online, anime adsfree, adfree anime, anime"
