@@ -43,10 +43,7 @@ const EpisodePage = () => {
         <meta property="og:title" content="StreamAble" />
         <meta property="og:description" content={parsed} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="og:image"
-          content={`${proxy}/${data?.image || data?.cover}`}
-        />
+        <meta property="og:image" content={data?.image || data?.cover} />
         <meta
           property="og:image:alt"
           content={
