@@ -1,5 +1,9 @@
-import { META } from "@consumet/extensions";
+import { META, ANIME, PROVIDERS_LIST } from "@consumet/extensions";
 
-export const anilist = new META.Anilist();
+const provider = PROVIDERS_LIST.ANIME.find(
+  (p) => p.name.toLowerCase() === "zoro"
+);
+
+export const anilist = new META.Anilist(provider);
 
 export const fetcher = (url) => fetch(url).then((res) => res.json());
