@@ -10,9 +10,11 @@ import {
 const Episode = (props) => {
   let { id, title, episode, image, number, backupImage, href, active } = props;
 
+  const proxy = `https://cors.proxy.consumet.org`;
+
   return (
     <Container href={href} active={active}>
-      <ImageContainer src={!image ? backupImage : image} />
+      <ImageContainer src={`${proxy}/${!image ? backupImage : image}`} />
       <InfoContainer>
         <Title>
           {!title ? `Episode ${number}` : `${title} - Episode ${episode}`}
