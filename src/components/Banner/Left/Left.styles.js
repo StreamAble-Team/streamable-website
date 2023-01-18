@@ -70,10 +70,6 @@ export const Container = styled(Link)`
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  &:hover,
-  &:focus {
-    border-bottom: 4px solid ${({ theme }) => theme.base.mainColor};
-  }
   &:hover ${Title}, &:focus ${Title} {
     text-decoration: underline;
   }

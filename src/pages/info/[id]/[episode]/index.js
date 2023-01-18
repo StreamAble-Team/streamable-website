@@ -40,7 +40,6 @@ const EpisodePage = () => {
       </Head>
       <Container>
         <WatchContainer data={data} />
-        {/* <WatchContainer /> */}
       </Container>
     </>
   );

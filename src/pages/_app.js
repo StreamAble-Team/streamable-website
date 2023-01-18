@@ -9,6 +9,8 @@ import "@vidstack/player/hydrate.js";
 import "../styles/reset.css";
 import "@splidejs/react-splide/css";
 
+import favicon from "../../public/favicon.ico";
+
 export default function App({ Component, pageProps }) {
   const G_TAG = process.env.NEXT_PUBLIC_ANALYTICS_ID;
   return (
@@ -33,7 +35,7 @@ export default function App({ Component, pageProps }) {
       />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href={`/favicon.ico`} />
         <title>Streamable</title>
       </Head>
       <ThemeProvider theme={darkTheme}>
