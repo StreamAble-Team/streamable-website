@@ -17,10 +17,33 @@ const Info = () => {
     api.fetcher
   );
 
+  const parser = new DOMParser();
+  const parsed = parser.parseFromString(data?.description, "text/html");
+
+  const proxy = `https://cors.proxy.consumet.org`;
+
   if (!data) return null;
   return (
     <>
       <Head>
+        <meta property="og:title" content="StreamAble" />
+        <meta property="og:description" content={parsed} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:image"
+          content={`${proxy}/${data?.image || data?.cover}`}
+        />
+        <meta
+          property="og:image:alt"
+          content={
+            !data
+              ? "Streamable"
+              : data?.title?.english ||
+                data?.title?.romaji ||
+                data?.title?.native
+          }
+        />
+        <meta property="og:image:type" content="small" />
         <title>
           {!data
             ? "Streamable"
