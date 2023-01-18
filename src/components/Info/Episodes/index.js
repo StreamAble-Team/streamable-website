@@ -10,7 +10,8 @@ import {
   TitleContainer,
 } from "./Episodes.styles";
 
-const Episodes = ({ episodes, cover, id }) => {
+const Episodes = ({ episodes, cover, id, subOrDub }) => {
+  console.log({ subOrDub });
   const router = useRouter();
   const { episode } = router.query;
   const [page, setPage] = React.useState(1);
@@ -53,6 +54,7 @@ const Episodes = ({ episodes, cover, id }) => {
     });
   }
 
+  const realSubOrDub = subOrDub === "dub" ? true : false;
   return (
     <EpisodesContainer>
       {/* <TitleContainer>
@@ -78,7 +80,7 @@ const Episodes = ({ episodes, cover, id }) => {
               key={ep.id}
               {...ep}
               backupImage={cover}
-              href={`/info/${id}/${ep?.number}`}
+              href={`/info/${id}/${ep?.number}?dub=${realSubOrDub}`}
               active={Number(ep?.number) === Number(episode)}
             />
           );

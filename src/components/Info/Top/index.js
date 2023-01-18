@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import {
   Button,
@@ -19,6 +21,9 @@ import {
 } from "./Top.styles";
 
 const InfoTop = (props) => {
+  const router = useRouter();
+  const { dub } = router.query;
+
   let { title, totalEpisodes, subOrDub, description, image, rating, id } =
     props;
   title = title?.english || title?.romaji || title?.native;
@@ -27,6 +32,7 @@ const InfoTop = (props) => {
   const parsed = parser.parseFromString(description, "text/html").body
     .textContent;
 
+  const realDub = subOrDub === "dub" ? false : true;
   return (
     <InfoTopContainer>
       <LeftContainer>
@@ -37,13 +43,15 @@ const InfoTop = (props) => {
       <RightContainer>
         <TitleContainer>
           <Title>{title}</Title>
-          <MetaInfoItem>
+          <MetaInfoItem clickable={false}>
             {totalEpisodes && totalEpisodes >= 0
               ? `${totalEpisodes} Episodes`
               : "??"}
           </MetaInfoItem>
-          <MetaInfoItem>
-            {subOrDub === "sub" ? `Subbed` : `Dubbed`}
+          <MetaInfoItem clickable={true}>
+            <Link href={`/info/${id}?dub=${realDub}`}>
+              {subOrDub === "sub" ? `Subbed` : `Dubbed`}
+            </Link>
           </MetaInfoItem>
         </TitleContainer>
         <Description>{parsed}</Description>
@@ -52,7 +60,7 @@ const InfoTop = (props) => {
           <Rating>{rating}</Rating>
         </RatingContainer> */}
         <ButtonsContainer>
-          <Button main={true} href={`/info/${id}/1`}>
+          <Button main={true} href={`/info/${id}/1?dub=${!realDub}`}>
             Watch Now
           </Button>
           <Button href={`#`}>

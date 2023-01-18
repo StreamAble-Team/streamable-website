@@ -69,6 +69,11 @@ export const MetaInfoItem = styled.span`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: ${({ clickable }) => (clickable ? "pointer" : "default")};
+  &:hover {
+    background-color: ${({ theme, clickable }) =>
+      clickable && theme.base.mainColor};
+  }
   @media (max-width: 768px) {
     font-size: 0.9rem;
     width: 100%;
