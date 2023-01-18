@@ -33,4 +33,14 @@ export const Input = styled.input`
     padding-right: calc(2rem - 2px);
     border: 2px solid ${({ theme }) => theme.base.mainColor};
   }
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    &:active,
+    &:focus {
+      padding-left: calc(1rem - 2px);
+      padding-right: calc(1rem - 2px);
+      border: 2px solid ${({ theme }) => theme.base.mainColor};
+    }
+  }
 `;
