@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import { utils } from "../../../utils";
 import {
   Container,
   Description,
@@ -17,9 +18,7 @@ const RightInfo = (props) => {
   let { title, episodes, genres, description, cover } = props;
   title = title?.english || title?.romaji || title?.native;
 
-  const parser = new DOMParser();
-  const parsed = parser.parseFromString(description || "??", "text/html").body
-    .textContent;
+  const parsed = utils.textSanitizer(description || "??");
   const findEpisode = episodes?.find(
     (ep) => Number(ep.number) === Number(episode)
   );

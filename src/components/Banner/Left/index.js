@@ -1,4 +1,5 @@
 import React from "react";
+import { utils } from "../../../utils";
 import {
   Container,
   Description,
@@ -11,9 +12,7 @@ import {
 const LeftSideBanner = ({ data }) => {
   const title =
     data?.title?.english || data?.title?.romaji || data?.title?.native;
-  const parser = new DOMParser();
-  const parsed = parser.parseFromString(data?.description, "text/html").body
-    .textContent;
+  const parsed = utils.textSanitizer(data?.description);
 
   return (
     <Container href={`/info/${data?.id}`}>

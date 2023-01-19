@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { utils } from "../../../utils";
 import {
   Button,
   ButtonIcon,
@@ -28,9 +29,8 @@ const InfoTop = (props) => {
     props;
   title = title?.english || title?.romaji || title?.native;
   rating = !rating ? "??" : (rating / 10)?.toFixed(1);
-  const parser = new DOMParser();
-  const parsed = parser.parseFromString(description, "text/html").body
-    .textContent;
+
+  const parsed = utils.textSanitizer(description);
 
   const realDub = subOrDub === "dub" ? false : true;
   return (

@@ -1,38 +1,45 @@
+import axios from "axios";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import React from "react";
-import useSWR from "swr";
 import { WatchContainer } from "../../../../containers";
 import { Container } from "../../../../styles/shared";
-import { api } from "../../../../utils";
+import { api, utils } from "../../../../utils";
 
-const EpisodePage = () => {
-  const router = useRouter();
-  const { id, episode, dub = false } = router.query;
+export const getServerSideProps = async (context) => {
+  const { params, query, resolvedUrl } = context;
+  const { id, episode } = params;
+  let { dub } = query;
+  const { SERVER_URL: serverURL } = process.env;
 
-  if (!id) return null;
+  dub = eval(dub) === false ? false : true;
 
-  let { data: infoData, mutate: mutateInfo } = useSWR(
-    `/api/anime/info/${id}?dub=${dub || false}`,
-    api.fetcher,
-    {
-      revalidateOnFocus: false,
-    }
-  );
+  let data = {};
 
-  let { data: watchData, mutate: mutateWatch } = useSWR(
-    !infoData ? null : `/api/anime/watch/` + infoData?.episodes[episode - 1].id,
-    api.fetcher,
-    {
-      revalidateOnFocus: false,
-    }
-  );
+  await axios
+    .get(`${serverURL}/api/anime/info/${id}?dub=${dub}`)
+    .then(async (res) => {
+      data = {};
+      if (!res.data) return null;
+      const { data: watchData } = await axios.get(
+        `${serverURL}/api/anime/watch/` + res.data?.episodes[episode - 1].id
+      );
+      data = {
+        ...res.data,
+        ...watchData,
+      };
+    });
 
-  const data = { ...infoData, ...watchData };
+  return {
+    props: {
+      data,
+    },
+  };
+};
 
-  const parser = new DOMParser();
-  const parsed = parser.parseFromString(data?.description, "text/html").body
-    .textContent;
+const EpisodePage = (props) => {
+  const { data } = props;
+
+  const parsed = utils.textSanitizer(data?.description);
 
   const proxy = `https://cors.proxy.consumet.org`;
 

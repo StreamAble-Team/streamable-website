@@ -87,6 +87,9 @@ const GlobalStyle = createGlobalStyle`
     vds-media:not([paused]) ${MediaPlay}  {
       display: none;
     }
+    vds-media[started] vds-poster {
+      opacity: 0;
+    }
     vds-media[fullscreen] ${MediaEnterFullscreen} {
       display: none;
     }

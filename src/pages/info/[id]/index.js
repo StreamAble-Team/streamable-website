@@ -1,25 +1,38 @@
 import { useRouter } from "next/router";
 import React from "react";
 import useSWR from "swr";
-import { api } from "../../../utils";
+import { api, utils } from "../../../utils";
 import { Container } from "../../../styles/shared";
 import { InfoContainer } from "../../../containers";
 import { Episodes } from "../../../components";
 import Head from "next/head";
+import axios from "axios";
 
-const Info = () => {
-  const router = useRouter();
-  const { id, dub } = router.query;
+export const getServerSideProps = async (context) => {
+  const { params, query, resolvedUrl } = context;
+  const { id } = params;
+  let { dub } = query;
+  const { SERVER_URL: serverURL } = process.env;
 
-  if (!id) return null;
-  const { data, error } = useSWR(
-    `/api/anime/info/${id}?dub=${dub || false}`,
-    api.fetcher
+  dub = eval(dub) === false ? false : true;
+
+  const { data } = await axios.get(
+    `${serverURL}/api/anime/info/${id}?dub=${dub}`
   );
 
-  const parser = new DOMParser();
-  const parsed = parser.parseFromString(data?.description, "text/html").body
-    .textContent;
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+const Info = (props) => {
+  const { data } = props;
+
+  if (!data) return null;
+
+  const parsed = utils.textSanitizer(data?.description);
 
   const proxy = `https://cors.proxy.consumet.org`;
 
