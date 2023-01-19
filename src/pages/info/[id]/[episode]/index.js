@@ -4,6 +4,7 @@ import React from "react";
 import { WatchContainer } from "../../../../containers";
 import { Container } from "../../../../styles/shared";
 import { api, utils } from "../../../../utils";
+import { WebVTTParser } from "webvtt-parser";
 
 export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
@@ -14,6 +15,7 @@ export const getServerSideProps = async (context) => {
   dub = !dub || eval(dub) === false ? false : true;
 
   let data = {};
+  let tree = {};
 
   await axios
     .get(`${serverURL}/api/anime/info/${id}?dub=${dub}`)
@@ -23,6 +25,16 @@ export const getServerSideProps = async (context) => {
       const { data: watchData } = await axios.get(
         `${serverURL}/api/anime/watch/` + res.data?.episodes[episode - 1].id
       );
+
+      const subtitlesEng = watchData?.subtitles?.find(
+        (sub) => sub?.lang?.toLowerCase() === "english"
+      );
+
+      const parser = new WebVTTParser();
+      const webVtt = await axios.get(subtitlesEng.url);
+
+      const parsedTree = await parser.parse(webVtt.data, "metadata");
+      tree = parsedTree;
       data = {
         ...res.data,
         ...watchData,
@@ -32,12 +44,13 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       data,
+      tree,
     },
   };
 };
 
 const EpisodePage = (props) => {
-  const { data } = props;
+  const { data, tree } = props;
 
   const parsed = utils.textSanitizer(data?.description);
 
@@ -63,7 +76,7 @@ const EpisodePage = (props) => {
         </title>
       </Head>
       <Container>
-        <WatchContainer data={data} />
+        <WatchContainer data={data} tree={tree} />
       </Container>
     </>
   );

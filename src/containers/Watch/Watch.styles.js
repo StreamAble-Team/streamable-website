@@ -24,6 +24,10 @@ export const TopContainer = styled.div`
   justify-content: space-between;
   gap: 3rem;
 
+  @media (max-width: 768px) {
+    height: auto;
+    flex-direction: column;
+  }
   @media (min-width: 1400px) {
     height: 600px;
   }

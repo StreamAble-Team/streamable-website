@@ -4,6 +4,7 @@ import GlobalStyle from "../../styles/global";
 import { darkTheme } from "../assets/themes/dark";
 import { NavBar } from "../components";
 import Script from "next/script";
+import NextNProgress from "nextjs-progressbar";
 
 import "@vidstack/player/hydrate.js";
 import "../styles/reset.css";
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href={`/favicon.ico`} />
         <title>Streamable</title>
       </Head>
+      <NextNProgress color="#7d5fff" />
       <ThemeProvider theme={darkTheme}>
         <NavBar />
         <GlobalStyle />

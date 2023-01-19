@@ -1,5 +1,6 @@
 import { rgba } from "polished";
 import { createGlobalStyle } from "styled-components";
+import { MediaBufferingIcon } from "../src/components/Watch/Player/Buffer/Buffer.styles";
 import { ControlsContainer } from "../src/components/Watch/Player/controls/Controls.styles";
 import {
   MediaEnterFullscreen,
@@ -126,6 +127,17 @@ const GlobalStyle = createGlobalStyle`
       cursor: none !important;
     }
     
+    vds-media:not([can-play]) ${MediaBufferingIcon},
+    vds-media[waiting] ${MediaBufferingIcon} {
+      opacity: 1;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 `;
 
 export default GlobalStyle;

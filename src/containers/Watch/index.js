@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import { Episodes, Player, RightInfo } from "../../components";
 import {
   Container,
@@ -8,7 +8,7 @@ import {
   VideoContainer,
 } from "./Watch.styles";
 
-const WatchContainer = ({ data }) => {
+const WatchContainer = ({ data, tree }) => {
   const router = useRouter();
   const { id, episode, dub = false } = router.query;
   const { sources, episodes, title } = data;
@@ -36,6 +36,8 @@ const WatchContainer = ({ data }) => {
       <TopContainer>
         <VideoContainer>
           <Player
+            subtitles={tree}
+            dub={dub}
             url={highestQuality?.url}
             proxy={proxy}
             poster={data?.cover}

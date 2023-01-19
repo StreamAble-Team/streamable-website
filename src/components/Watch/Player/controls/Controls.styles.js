@@ -40,8 +40,6 @@ export const BottomBottomContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin-top: 0.5rem;
 `;
 
 export const PlayWrapper = styled.div`

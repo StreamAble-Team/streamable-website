@@ -1,13 +1,14 @@
 import { rgba } from "polished";
 import styled from "styled-components";
 
-const height = "4rem",
+const height = "1rem",
   thumbWidth = "1rem",
   trackHeight = ".5rem";
 
 export const Container = styled.div`
   width: 100%;
   height: ${height};
+  margin-bottom: 1rem;
 `;
 
 export const Wrapper = styled.div`
