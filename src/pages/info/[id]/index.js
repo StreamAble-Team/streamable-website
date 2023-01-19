@@ -14,7 +14,7 @@ export const getServerSideProps = async (context) => {
   let { dub } = query;
   const { SERVER_URL: serverURL } = process.env;
 
-  dub = eval(dub) === false ? false : true;
+  dub = !dub || eval(dub) === false ? false : true;
 
   const { data } = await axios.get(
     `${serverURL}/api/anime/info/${id}?dub=${dub}`
