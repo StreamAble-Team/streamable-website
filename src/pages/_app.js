@@ -8,6 +8,7 @@ import NextNProgress from "nextjs-progressbar";
 
 import "@vidstack/player/hydrate.js";
 import "../styles/reset.css";
+import "../../styles/load.css";
 import "@splidejs/react-splide/css";
 
 import favicon from "../../public/favicon.ico";
@@ -35,6 +36,21 @@ export default function App({ Component, pageProps }) {
         }}
       />
       <Head>
+        <meta charSet="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
+        <meta
+          name="keywords"
+          content="watch animes, animes online, anime adsfree, adfree anime, anime"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={`/favicon.ico`} />
         <title>Streamable</title>

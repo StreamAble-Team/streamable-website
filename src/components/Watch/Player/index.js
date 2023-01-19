@@ -39,16 +39,6 @@ const Player = ({ url, proxy, poster, title, subTitle, subtitles, dub }) => {
           setSubtitleHtml("");
         }
       }
-
-      // if (subtitles.cues[currentCue].startTime <= currentTime) {
-      //   if (subtitles.cues[currentCue].endTime < currentTime) {
-      //     setCurrentCue(currentCue + 1);
-      //     return;
-      //   }
-      // } else if (subtitles.cues[currentCue].startTime > currentTime) {
-      //   setCurrentCue(currentCue - 1 >= 0 ? currentCue - 1 : 0);
-      //   return;
-      // }
     },
     [currentTime, currentCue, subtitleHtml, subtitles]
   );
