@@ -31,8 +31,16 @@ export const Wrapper = styled.div`
 export const AnimeTitle = styled.h1`
   font-size: 1.4rem;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   &:first-letter {
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
   }
 `;
 
@@ -41,4 +49,10 @@ export const EpisodeTitle = styled.h2`
   font-weight: 400;
   margin-bottom: 0.5rem;
   color: ${({ theme }) => theme.text.offWhite};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @media (min-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;

@@ -47,7 +47,7 @@ export const Title = styled.h1`
   font-weight: 500;
   color: ${({ theme }) => theme.text.primary};
   transition: color 0.2s ease-in-out;
-  max-width: 80%;
+  max-width: 70%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
