@@ -21,7 +21,7 @@ const Card = (props) => {
   return (
     <CardContainer href={`/info/${id}`}>
       <TopContainer>
-        <ImageContainer background={image} />
+        <ImageContainer src={image} height={400} width={400} />
       </TopContainer>
       <BottomContainer>
         <Title>{title}</Title>

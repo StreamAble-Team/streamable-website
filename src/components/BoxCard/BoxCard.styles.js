@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
@@ -5,6 +6,7 @@ export const TopContainer = styled.div`
   width: 100%;
   height: 53%;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 `;
 
 export const BottomContainer = styled.div`
@@ -18,13 +20,10 @@ export const BottomContainer = styled.div`
   gap: 0.25rem;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(Image)`
   width: 100%;
   height: 100%;
-  background-image: url(${({ src }) => src});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
 `;
 
 export const Title = styled.h3`

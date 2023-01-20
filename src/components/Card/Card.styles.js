@@ -1,16 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
 export const TopContainer = styled.div`
   width: 100%;
-  height: 75%;
+  height: 71%;
   transition: all 0.3s ease-in-out;
 `;
 
 export const BottomContainer = styled.div`
   width: 100%;
-  height: 25%;
+  height: 31%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -19,13 +20,10 @@ export const BottomContainer = styled.div`
   padding: 0.5rem;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(Image)`
   width: 100%;
   height: 100%;
-  background: url(${(props) => props.background});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
 `;
 
 export const Title = styled.h1`

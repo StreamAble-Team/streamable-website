@@ -22,7 +22,7 @@ const BoxCard = (props) => {
     <BoxCardContainer>
       <Link href={`/info/${id}`}>
         <TopContainer>
-          <ImageContainer src={cover} />
+          <ImageContainer src={cover} width={400} height={400} />
         </TopContainer>
         <BottomContainer>
           <Title>{title}</Title>

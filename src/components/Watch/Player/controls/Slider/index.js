@@ -5,17 +5,26 @@ import {
   SliderThumbContainer,
   SliderTrack,
   SliderTrackFill,
+  SliderTrackFillBuffer,
   Wrapper,
 } from "./Slider.styles";
-import { TimeSlider } from "@vidstack/player-react";
+import { TimeSlider, useMediaContext } from "@vidstack/player-react";
 
 const VideoSlider = () => {
+  const { bufferedAmount, duration } = useMediaContext();
+  const total = duration;
+  const buffered = (bufferedAmount / total) * 100;
+
   return (
     <Container>
       <Wrapper>
         <TimeSlider>
-          <SliderTrack></SliderTrack>
-          <SliderTrackFill></SliderTrackFill>
+          <SliderTrack>
+            <SliderTrackFill></SliderTrackFill>
+            <SliderTrackFillBuffer
+              bufferedAmount={buffered}
+            ></SliderTrackFillBuffer>
+          </SliderTrack>
           <SliderThumbContainer>
             <SliderThumb></SliderThumb>
           </SliderThumbContainer>

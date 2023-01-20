@@ -16,10 +16,12 @@ export const SubtitlesContainer = styled.div`
 export const SubtitlesWrapper = styled.div``;
 
 export const Subtitle = styled.p`
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  font-family: "Trebuchet MS";
-  font-size: 26px;
+  font-size: 1.4rem;
   padding: 4px 12px;
   border-radius: 6px;
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;

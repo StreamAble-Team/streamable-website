@@ -3,6 +3,7 @@ import {
   Container,
   Image,
   ImageContainer,
+  Img,
   LeftContainer,
   Rating,
   RatingContainer,
@@ -26,7 +27,7 @@ const Item = (props) => {
     <Container active={props.active} onClick={changeIndex} ref={setRef}>
       <LeftContainer>
         <ImageContainer>
-          <Image src={props.image} alt="Logo" />
+          <Img src={props.image} alt="Logo" width={200} height={200} />
         </ImageContainer>
       </LeftContainer>
       <RightContainer>

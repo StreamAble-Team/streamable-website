@@ -14,7 +14,11 @@ const Episode = (props) => {
 
   return (
     <Container href={href} active={active}>
-      <ImageContainer src={`${proxy}/${!image ? backupImage : image}`} />
+      <ImageContainer
+        src={`${proxy}/${!image ? backupImage : image}`}
+        width={150}
+        height={150}
+      />
       <InfoContainer>
         <Title>
           {!title ? `Episode ${number}` : `${title} - Episode ${episode}`}

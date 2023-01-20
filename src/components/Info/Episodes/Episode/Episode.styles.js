@@ -1,15 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(Image)`
   width: 100%;
   height: 60%;
-  background-image: url(${(props) => props.src});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
   transition: all 0.3s ease-in-out;
-  overflow: hidden;
 `;
 
 export const InfoContainer = styled.div`

@@ -15,6 +15,7 @@ import {
   MediaUnmute,
   SliderThumbContainer,
 } from "../src/components/Watch/Player/controls/Volume/Volume.styles";
+import { SubtitlesContainer } from "../src/components/Watch/Player/Subtitles/Subtitles.styles";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -125,6 +126,11 @@ const GlobalStyle = createGlobalStyle`
       opacity: 0;
       visibility: hidden;
       cursor: none !important;
+    }
+    vds-media[hide-ui] ${SubtitlesContainer},
+    vds-media:not([can-play]) ${SubtitlesContainer},
+    vds-media[user-idle] ${SubtitlesContainer} {
+      padding-bottom: 30px;
     }
     
     vds-media:not([can-play]) ${MediaBufferingIcon},

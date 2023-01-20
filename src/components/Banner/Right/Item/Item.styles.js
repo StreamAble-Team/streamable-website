@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.div`
   width: 100%;
@@ -40,13 +41,10 @@ export const ImageContainer = styled.div`
   overflow: hidden;
 `;
 
-export const Image = styled.div`
+export const Img = styled(Image)`
   width: 100%;
   height: 100%;
-  background: url(${({ src }) => src});
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
+  object-fit: cover;
 `;
 
 export const Title = styled.h1`

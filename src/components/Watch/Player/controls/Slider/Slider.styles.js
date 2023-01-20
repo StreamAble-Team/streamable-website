@@ -37,6 +37,14 @@ export const SliderTrackFill = styled(SliderTrack)`
   z-index: 1; /** above track. */
 `;
 
+export const SliderTrackFillBuffer = styled(SliderTrack)`
+  background-color: ${({ theme }) => rgba(theme.base.mainColor, 0.3)};
+  width: ${({ bufferedAmount }) => bufferedAmount}%;
+  transition: width 0.1s ease-in-out;
+  will-change: width;
+  z-index: 1; /** above track. */
+`;
+
 export const SliderThumbContainer = styled.div`
   position: absolute;
   top: 0;
