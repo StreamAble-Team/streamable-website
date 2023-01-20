@@ -5,6 +5,7 @@ import { WatchContainer } from "../../../../containers";
 import { Container } from "../../../../styles/shared";
 import { api, utils } from "../../../../utils";
 import { WebVTTParser } from "webvtt-parser";
+import Four0FourContainer from "../../../../containers/404";
 
 export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
@@ -21,10 +22,14 @@ export const getServerSideProps = async (context) => {
     .get(`${serverURL}/api/anime/info/${id}?dub=${dub}`)
     .then(async (res) => {
       data = {};
-      if (!res.data) return null;
+      if (!res.data) return (data = null);
+      if (!res.data?.episodes[episode - 1]) return (data = null);
       const { data: watchData } = await axios.get(
         `${serverURL}/api/anime/watch/` + res.data?.episodes[episode - 1].id
       );
+
+      if (!watchData) return (data = null);
+      if (!tree) return (tree = null);
 
       const subtitlesEng = watchData?.subtitles?.find(
         (sub) => sub?.lang?.toLowerCase() === "english"
@@ -56,7 +61,7 @@ const EpisodePage = (props) => {
 
   const proxy = `https://cors.proxy.consumet.org`;
 
-  if (!data) return null;
+  if (!data) return <Four0FourContainer />;
   return (
     <>
       <Head>
