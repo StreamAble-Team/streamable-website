@@ -10,3 +10,7 @@ export const Container = styled.div`
     padding: 0 1rem;
   }
 `;
+
+export const ContainerNoPadding = styled(Container)`
+  padding: 0;
+`;

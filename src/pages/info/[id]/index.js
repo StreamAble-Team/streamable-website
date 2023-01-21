@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import useSWR from "swr";
 import { api, utils } from "../../../utils";
-import { Container } from "../../../styles/shared";
+import { ContainerNoPadding } from "../../../styles/shared";
 import { InfoContainer } from "../../../containers";
 import { Episodes } from "../../../components";
 import Head from "next/head";
@@ -63,9 +63,9 @@ const Info = (props) => {
               data?.title?.native}
         </title>
       </Head>
-      <Container>
+      <ContainerNoPadding>
         <InfoContainer data={data} />
-      </Container>
+      </ContainerNoPadding>
     </>
   );
 };

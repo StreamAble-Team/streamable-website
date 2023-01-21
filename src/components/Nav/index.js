@@ -14,11 +14,17 @@ import {
 } from "./Nav.styles";
 import Search from "./Search";
 import NavProfile from "./Profile";
+import { useRouter } from "next/router";
 
 const NavBar = () => {
+  const router = useRouter();
   const [clicked, setClicked] = useState(false);
+
+  //check if current route is info/...
+  const isInfo = router.pathname.includes("info");
+
   return (
-    <Container>
+    <Container isInfo={isInfo}>
       <Wrapper>
         <ImageContainer>
           <Image src={Logo} alt="Logo" />

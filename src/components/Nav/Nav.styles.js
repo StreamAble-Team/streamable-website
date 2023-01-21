@@ -1,11 +1,16 @@
+import { rgba } from "polished";
 import { FaBars, FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
 export const Container = styled.nav`
+  position: relative;
+  z-index: 1;
   padding: 0 3rem;
   border-bottom: 4px solid ${({ theme }) => theme.base.navBg};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   height: 5.5rem;
+  background: ${({ theme, isInfo }) =>
+    isInfo ? rgba(theme.base.navBg, 0.7) : null};
   @media (max-width: 768px) {
     padding: 0 1rem;
   }

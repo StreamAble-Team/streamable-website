@@ -1,3 +1,4 @@
+import { load } from "cheerio";
 import { api } from "../../../../utils";
 
 export default async function handler(req, res) {
@@ -10,5 +11,27 @@ export default async function handler(req, res) {
     fetchFiller
   );
 
-  res.status(200).json(results);
+  // do not fetch if dub === false
+  if (eval(isDub) === true) {
+    let subresults = await api.anilist.fetchAnimeInfo(id, false, fetchFiller);
+    results.mappings = subresults.mappings;
+  }
+
+  const tvdb_res = await fetch(
+    `https://www.thetvdb.com/dereferrer/series/${results?.mappings?.thetvdb}`
+  );
+
+  const $ = load(await tvdb_res.text());
+
+  const logo =
+    $("#artwork-clearlogo")
+      .children()
+      .first()
+      .children()
+      .last()
+      .children()
+      .last()
+      .attr("href") ?? null;
+
+  res.status(200).json({ ...results, logo });
 }
