@@ -16,30 +16,33 @@ export const getServerSideProps = async (context) => {
   dub = !dub || eval(dub) === false ? false : true;
 
   let data = {};
-  let tree = {};
+  let tree = null;
 
   await axios
     .get(`${serverURL}/api/anime/info/${id}?dub=${dub}`)
     .then(async (res) => {
+      console.log({ res: res.data });
       data = {};
-      if (!res.data) return (data = null);
+      if (!res?.data) return (data = null);
       if (!res.data?.episodes[episode - 1]) return (data = null);
+
       const { data: watchData } = await axios.get(
         `${serverURL}/api/anime/watch/` + res.data?.episodes[episode - 1].id
       );
 
-      if (!watchData) return (data = null);
-      if (!tree) return (tree = null);
+      if (!watchData) data = null;
 
-      const subtitlesEng = watchData?.subtitles?.find(
-        (sub) => sub?.lang?.toLowerCase() === "english"
-      );
+      const subtitlesEng =
+        watchData?.subtitles?.find(
+          (sub) => sub?.lang?.toLowerCase() === "english"
+        ) || url;
 
       const parser = new WebVTTParser();
-      const webVtt = await axios.get(subtitlesEng.url);
+      const webVtt = await axios.get(subtitlesEng?.url || null);
 
-      const parsedTree = await parser.parse(webVtt.data, "metadata");
+      const parsedTree = await parser.parse(webVtt?.data || url, "metadata");
       tree = parsedTree;
+
       data = {
         ...res.data,
         ...watchData,
@@ -49,7 +52,7 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       data,
-      tree,
+      tree: JSON.parse(JSON.stringify(tree)),
     },
   };
 };
