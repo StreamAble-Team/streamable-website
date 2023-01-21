@@ -48,7 +48,6 @@ const InfoTop = (props) => {
   rating = !rating ? "??" : (rating / 10)?.toFixed(1);
 
   const parsed = utils.textSanitizer(description);
-  console.log(props.logo);
 
   const realDub = subOrDub === "dub" ? false : true;
 
