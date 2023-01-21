@@ -21,7 +21,6 @@ export const getServerSideProps = async (context) => {
   await axios
     .get(`${serverURL}/api/anime/info/${id}?dub=${dub}`)
     .then(async (res) => {
-      console.log({ res: res.data });
       data = {};
       if (!res?.data) return (data = null);
       if (!res.data?.episodes[episode - 1]) return (data = null);
