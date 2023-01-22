@@ -23,11 +23,17 @@ export const Wrapper = styled.div`
 export const MediaMute = styled(FaVolumeMute)`
   font-size: ${({ theme }) => theme.videoPlayer.iconSize};
   cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.videoPlayer.iconSizeMobile};
+  }
 `;
 
 export const MediaUnmute = styled(FaVolumeUp)`
   font-size: ${({ theme }) => theme.videoPlayer.iconSize};
   cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.videoPlayer.iconSizeMobile};
+  }
 `;
 
 export const SliderContainer = styled.div`

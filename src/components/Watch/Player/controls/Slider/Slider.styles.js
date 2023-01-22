@@ -6,9 +6,11 @@ const height = "1rem",
   trackHeight = ".5rem";
 
 export const Container = styled.div`
+  position: relative;
   width: 100%;
   height: ${height};
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  z-index: 1;
 `;
 
 export const Wrapper = styled.div`

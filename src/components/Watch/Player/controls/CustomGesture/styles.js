@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  z-index: 1;
+  z-index: 4;
   background: none;
   border: none;
   outline: none;
@@ -11,5 +11,5 @@ export const Button = styled.button`
   left: 0;
 
   width: 100%;
-  height: 100%;
+  height: 83%;
 `;

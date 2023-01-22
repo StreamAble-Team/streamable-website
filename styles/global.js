@@ -52,9 +52,9 @@ const GlobalStyle = createGlobalStyle`
       display: none;
     }
     vds-time-slider {
-      --height: 48px;
-      --thumb-width: 24px;
-      --track-height: 4px;
+      --height: 1rem;
+      --thumb-width: 1rem;
+      --track-height: .5rem;
     
       display: flex;
       align-items: center;
@@ -66,9 +66,9 @@ const GlobalStyle = createGlobalStyle`
       padding: 2rem;
     }
     vds-volume-slider {
-      --height: 48px;
-      --thumb-width: 24px;
-      --track-height: 4px;
+      --height: 1rem;
+      --thumb-width: 1rem;
+      --track-height: .5rem;
     
       display: flex;
       align-items: center;

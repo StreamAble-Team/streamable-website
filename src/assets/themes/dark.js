@@ -10,6 +10,7 @@ export const darkTheme = {
   },
   videoPlayer: {
     iconSize: "1.6rem",
+    iconSizeMobile: "1.2rem",
   },
   text: {
     primary: "#fff",

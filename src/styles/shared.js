@@ -12,5 +12,6 @@ export const Container = styled.div`
 `;
 
 export const ContainerNoPadding = styled(Container)`
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 `;

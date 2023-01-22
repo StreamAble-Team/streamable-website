@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import { Container } from "./Player.styles";
+import { Container, VideoContainer } from "./Player.styles";
 import {
   Hls,
   Media,
@@ -49,7 +49,7 @@ const Player = ({ url, proxy, poster, title, subTitle, subtitles, dub }) => {
       <Media ref={media}>
         <VideoPoster />
         <CustomGesture />
-        <AspectRatio ratio="16/9">
+        <VideoContainer ratio="16/9">
           <Hls poster={poster}>
             <video
               src={proxy ? `${proxy}/${url}` : url}
@@ -60,7 +60,7 @@ const Player = ({ url, proxy, poster, title, subTitle, subtitles, dub }) => {
           <VideoBuffering />
           <VideoSubtitles subtitleHtml={subtitleHtml} subtitles={subtitles} />
           <VideoControls title={title} subTitle={subTitle} />
-        </AspectRatio>
+        </VideoContainer>
       </Media>
     </Container>
   );

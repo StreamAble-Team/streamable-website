@@ -9,9 +9,15 @@ export const Container = styled.div`
 export const MediaEnterFullscreen = styled(FaExpand)`
   font-size: ${({ theme }) => theme.videoPlayer.iconSize};
   cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.videoPlayer.iconSizeMobile};
+  }
 `;
 
 export const MediaExitFullscreen = styled(FaCompress)`
   font-size: ${({ theme }) => theme.videoPlayer.iconSize};
   cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.videoPlayer.iconSizeMobile};
+  }
 `;
