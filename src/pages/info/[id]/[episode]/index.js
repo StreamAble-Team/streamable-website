@@ -38,7 +38,6 @@ export const getServerSideProps = async (context) => {
 
       const parser = new WebVTTParser();
       const webVtt = await axios.get(subtitlesEng?.url || null);
-      console.log(subtitlesEng?.url);
 
       const parsedTree = await parser.parse(webVtt?.data || url, "metadata");
       await parsedTree?.cues?.forEach((cue) => {
