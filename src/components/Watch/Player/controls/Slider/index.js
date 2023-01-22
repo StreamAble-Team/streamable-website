@@ -22,7 +22,7 @@ const VideoSlider = () => {
           <SliderTrack>
             <SliderTrackFill></SliderTrackFill>
             <SliderTrackFillBuffer
-              bufferedAmount={buffered}
+              bufferedAmount={buffered || 0}
             ></SliderTrackFillBuffer>
           </SliderTrack>
           <SliderThumbContainer>

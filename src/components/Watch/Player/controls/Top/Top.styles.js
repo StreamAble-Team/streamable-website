@@ -48,7 +48,7 @@ export const EpisodeTitle = styled.h2`
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
-  color: ${({ theme }) => theme.text.offWhite};
+  color: #dbdbdb;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SliderTrack = styled.div`
-  background-color: ${({ theme }) => rgba(theme.base.navBg, 0.8)};
+  background-color: ${({ theme }) => rgba("#141414", 0.8)};
   width: 100%;
   height: ${trackHeight};
   position: absolute;

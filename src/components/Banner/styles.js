@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   margin: 2rem auto;
-  height: 500px;
+  height: 400px;
   display: flex;
   flex-direction: row
   justify-content: space-between;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   overflow: hidden;
   position: relative;
   @media (max-width: 1600px) {
-    height: 450px;
+    height: 400px;
   }
   @media (max-width: 768px) {
     flex-direction: column;
