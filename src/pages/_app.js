@@ -15,6 +15,7 @@ import favicon from "../../public/favicon.ico";
 
 export default function App({ Component, pageProps }) {
   const G_TAG = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+  const Adsense_tag = process.env.NEXT_PUBLIC_ANDENSE_TID;
   return (
     <>
       <Script
@@ -34,6 +35,13 @@ export default function App({ Component, pageProps }) {
           });
           `,
         }}
+      />
+      <Script
+        id="Adsense-id"
+        data-ad-client={`ca-pub-${Adsense_tag}`}
+        async="true"
+        strategy="beforeInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
       <Head>
         <meta charSet="utf-8" />

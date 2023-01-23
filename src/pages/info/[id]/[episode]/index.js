@@ -43,6 +43,7 @@ export const getServerSideProps = async (context) => {
       await parsedTree?.cues?.forEach((cue) => {
         cue.text = cue?.text?.replace(/\\h/g, "\n");
       });
+      
       tree = parsedTree;
 
       data = {
