@@ -6,7 +6,11 @@ import { NavBar } from "../components";
 import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 
-import "@vidstack/player/hydrate.js";
+import "vidstack/styles/base.css";
+// the following styles are optional - remove to go headless.
+// import "vidstack/styles/ui/buttons.css";
+// import "vidstack/styles/ui/sliders.css";
+
 import "../styles/reset.css";
 import "../../styles/load.css";
 import "@splidejs/react-splide/css";
@@ -38,10 +42,9 @@ export default function App({ Component, pageProps }) {
       />
       <Script
         id="Adsense-id"
-        data-ad-client={`ca-pub-${Adsense_tag}`}
         async="true"
         strategy="beforeInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${Adsense_tag}`}
       />
       <Head>
         <meta charSet="utf-8" />
