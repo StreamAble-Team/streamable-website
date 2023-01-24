@@ -1,4 +1,3 @@
-import { useMediaContext } from "@vidstack/player-react";
 import React, { useState } from "react";
 import {
   Subtitle,

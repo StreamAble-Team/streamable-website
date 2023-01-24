@@ -1,4 +1,4 @@
-import { MuteButton, VolumeSlider } from "@vidstack/player-react";
+import { MuteButton, VolumeSlider } from "@vidstack/react";
 import React from "react";
 import {
   Container,

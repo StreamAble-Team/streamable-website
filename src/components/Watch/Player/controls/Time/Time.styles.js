@@ -1,5 +1,5 @@
+import { Time } from "@vidstack/react";
 import styled from "styled-components";
-import { Time } from "@vidstack/player-react";
 
 export const Container = styled.div`
   display: flex;

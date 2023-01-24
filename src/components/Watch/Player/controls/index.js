@@ -6,7 +6,6 @@ import {
   ControlsContainer,
   MiddleContainer,
   PlayWrapper,
-  VideoGesture,
   Wrapper,
 } from "./Controls.styles";
 import VideoFullscreen from "./FullScreen";

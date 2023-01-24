@@ -1,10 +1,10 @@
-import { useMediaContext, useMediaRemote } from "@vidstack/player-react";
+import { useMediaRemote, useMediaState } from "@vidstack/react";
 import React from "react";
 import { Button } from "./styles";
 
 const CustomGesture = () => {
   const remote = useMediaRemote();
-  const { paused } = useMediaContext();
+  const { paused } = useMediaState();
 
   const handleGesture = (e) => {
     if (paused) return remote.play(e);

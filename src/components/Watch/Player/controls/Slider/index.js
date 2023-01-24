@@ -1,3 +1,4 @@
+import { TimeSlider, useMediaState } from "@vidstack/react";
 import React from "react";
 import {
   Container,
@@ -8,10 +9,9 @@ import {
   SliderTrackFillBuffer,
   Wrapper,
 } from "./Slider.styles";
-import { TimeSlider, useMediaContext } from "@vidstack/player-react";
 
 const VideoSlider = () => {
-  const { bufferedAmount, duration } = useMediaContext();
+  const { bufferedAmount, duration } = useMediaState();
   const total = duration;
   const buffered = (bufferedAmount / total) * 100;
 

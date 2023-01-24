@@ -1,4 +1,3 @@
-import { Gesture } from "@vidstack/player-react";
 import styled from "styled-components";
 
 export const ControlsContainer = styled.div`
@@ -7,6 +6,7 @@ export const ControlsContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+
   &::before {
     left: 0;
     right: 0;
@@ -29,6 +29,7 @@ export const Wrapper = styled.div`
 
 export const BottomContainer = styled.div`
   width: 100%;
+  height: 10px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -49,13 +50,4 @@ export const PlayWrapper = styled.div`
   align-items: center;
   gap: 1.7rem;
   flex: 1;
-`;
-
-export const VideoGesture = styled(Gesture)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
 `;

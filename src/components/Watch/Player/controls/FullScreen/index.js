@@ -1,17 +1,17 @@
+import { FullscreenButton } from "@vidstack/react";
 import React from "react";
 import {
   Container,
   MediaEnterFullscreen,
   MediaExitFullscreen,
 } from "./FullScreen.styles";
-import { FullscreenButton } from "@vidstack/player-react";
 
 const VideoFullscreen = () => {
   return (
     <Container>
       <FullscreenButton>
-        <MediaEnterFullscreen />
-        <MediaExitFullscreen />
+        <MediaEnterFullscreen slot={"enter"} />
+        <MediaExitFullscreen slot={"exit"} />
       </FullscreenButton>
     </Container>
   );
