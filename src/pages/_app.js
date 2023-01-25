@@ -7,9 +7,8 @@ import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 
 import "vidstack/styles/base.css";
-// the following styles are optional - remove to go headless.
-// import "vidstack/styles/ui/buttons.css";
-// import "vidstack/styles/ui/sliders.css";
+import "vidstack/styles/ui/buttons.css";
+import "vidstack/styles/ui/sliders.css";
 
 import "../styles/reset.css";
 import "../../styles/load.css";

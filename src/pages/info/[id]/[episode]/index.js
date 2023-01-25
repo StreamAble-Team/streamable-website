@@ -2,7 +2,7 @@ import axios from "axios";
 import Head from "next/head";
 import React from "react";
 import { WatchContainer } from "../../../../containers";
-import { Container } from "../../../../styles/shared";
+import { Container, ContainerNoPadding } from "../../../../styles/shared";
 import { api, utils } from "../../../../utils";
 import { WebVTTParser } from "webvtt-parser";
 import Four0FourContainer from "../../../../containers/404";
@@ -43,7 +43,7 @@ export const getServerSideProps = async (context) => {
       await parsedTree?.cues?.forEach((cue) => {
         cue.text = cue?.text?.replace(/\\h/g, "\n");
       });
-      
+
       tree = parsedTree;
 
       data = {
@@ -65,8 +65,6 @@ const EpisodePage = (props) => {
 
   const parsed = utils.textSanitizer(data?.description);
 
-  const proxy = `https://cors.proxy.consumet.org`;
-
   if (!data) return <Four0FourContainer />;
   return (
     <>
@@ -86,9 +84,9 @@ const EpisodePage = (props) => {
           {data?.title?.english || data?.title?.romaji || data?.title?.native}
         </title>
       </Head>
-      <Container>
+      <ContainerNoPadding>
         <WatchContainer data={data} tree={tree} />
-      </Container>
+      </ContainerNoPadding>
     </>
   );
 };

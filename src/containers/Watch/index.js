@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import { Episodes, Player, RightInfo } from "../../components";
+import { Episodes, Player, RightInfo, VideoPlayer } from "../../components";
+import { Container } from "../../styles/shared";
 import {
-  Container,
   EpisodesContainer,
   TopContainer,
   VideoContainer,
@@ -31,30 +31,30 @@ const WatchContainer = ({ data, tree }) => {
   );
 
   const proxy = `https://cors.proxy.consumet.org`;
+
   return (
-    <Container>
-      <TopContainer>
-        <VideoContainer>
-          <Player
-            subtitles={tree}
-            dub={dub}
-            url={highestQuality?.url}
-            proxy={proxy}
-            poster={data?.cover}
-            title={title?.english || title?.romaji || title?.native}
-            subTitle={
-              findEpisode && findEpisode?.title
-                ? `${episode} - ${findEpisode?.title}`
-                : `${episode} - Episode ${episode}`
-            }
-          />
-        </VideoContainer>
-        <RightInfo {...data} />
-      </TopContainer>
-      <EpisodesContainer>
-        <Episodes {...data} />
-      </EpisodesContainer>
-    </Container>
+    <>
+      {/* <TopContainer> */}
+      <VideoPlayer
+        subtitles={tree}
+        dub={dub}
+        src={highestQuality?.url}
+        proxy={proxy}
+        poster={data?.cover}
+        title={title?.english || title?.romaji || title?.native}
+        subTitle={
+          findEpisode && findEpisode?.title
+            ? `${episode} - ${findEpisode?.title}`
+            : `${episode} - Episode ${episode}`
+        }
+      />
+      {/* </TopContainer> */}
+      <Container>
+        <EpisodesContainer>
+          <Episodes {...data} />
+        </EpisodesContainer>
+      </Container>
+    </>
   );
 };
 
