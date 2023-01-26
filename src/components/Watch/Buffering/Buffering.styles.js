@@ -12,7 +12,7 @@ export const MediaBufferingContainer = styled.div`
   /* prevent blocking lower elements (e.g., gestures). */
   pointer-events: none;
   /** place above poster (optional). */
-  z-index: 1;
+  z-index: 3;
 `;
 
 export const MediaBufferingIcon = styled.svg`

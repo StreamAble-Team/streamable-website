@@ -1,5 +1,6 @@
 import { rgba } from "polished";
 import { createGlobalStyle } from "styled-components";
+import { MediaBufferingIcon } from "../src/components/Watch/Buffering/Buffering.styles";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -16,7 +17,18 @@ const GlobalStyle = createGlobalStyle`
     body::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => rgba(theme.base.mainColor, 0.5)};
       border-radius: 1rem;
-    } 
+    }
+    vds-media:not([can-play]) ${MediaBufferingIcon},
+    vds-media[waiting] ${MediaBufferingIcon} {
+      opacity: 1;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 `;
 
 export default GlobalStyle;

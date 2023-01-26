@@ -19,7 +19,7 @@ const VideoSubtitles = ({ subtitles }) => {
 
   useEffect(() => {
     if (!media) return;
-    if (!subtitles || !realDub) return;
+    if (!subtitles || realDub) return;
 
     const overlappingCues = subtitles?.cues?.filter(
       (cue) => cue.startTime <= currentTime && cue.endTime >= currentTime
