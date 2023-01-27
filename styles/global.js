@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${({ theme }) => rgba(theme.base.mainColor, 0.5)};
       border-radius: 1rem;
     }
+    vds-media {
+      position: relative;
+    }
+
     vds-media:not([can-play]) ${MediaBufferingIcon},
     vds-media[waiting] ${MediaBufferingIcon} {
       opacity: 1;

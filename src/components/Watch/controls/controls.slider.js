@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const videoControlsWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+`;
+
 export const VideoControlsContainer = styled.div`
   display: flex;
   flex-direction: column;

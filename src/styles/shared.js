@@ -13,6 +13,6 @@ export const Container = styled.div`
 `;
 
 export const ContainerNoPadding = styled(Container)`
-  margin: 0 !important;
   padding: 0 !important;
+  overflow: hidden;
 `;

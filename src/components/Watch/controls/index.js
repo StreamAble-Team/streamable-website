@@ -4,6 +4,7 @@ import {
   MediaButtons,
   PlayPauseWrapper,
   VideoControlsContainer,
+  videoControlsWrapper,
 } from "./controls.slider";
 import VideoFullscreenButton from "./Fullscreen";
 import VideoPlayButton from "./PlayButton";
@@ -13,19 +14,21 @@ import VideoVolume from "./Volume";
 
 const VideoControls = (props) => {
   return (
-    <VideoControlsContainer>
-      <VideoSlider />
-      <BottomContainer>
-        <PlayPauseWrapper>
-          <VideoPlayButton />
-          <VideoVolume />
-        </PlayPauseWrapper>
-        <VideoTitle {...props} />
-        <MediaButtons>
-          <VideoFullscreenButton />
-        </MediaButtons>
-      </BottomContainer>
-    </VideoControlsContainer>
+    <videoControlsWrapper>
+      <VideoControlsContainer>
+        <VideoSlider />
+        <BottomContainer>
+          <PlayPauseWrapper>
+            <VideoPlayButton />
+            <VideoVolume />
+          </PlayPauseWrapper>
+          <VideoTitle {...props} />
+          <MediaButtons>
+            <VideoFullscreenButton />
+          </MediaButtons>
+        </BottomContainer>
+      </VideoControlsContainer>
+    </videoControlsWrapper>
   );
 };
 
