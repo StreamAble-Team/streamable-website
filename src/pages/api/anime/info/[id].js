@@ -18,21 +18,23 @@ export default async function handler(req, res) {
       results.mappings = subresults.mappings;
     }
 
-    const tvdb_res = await fetch(
-      `https://www.thetvdb.com/dereferrer/series/${results?.mappings?.thetvdb}`
-    );
+    // const tvdb_res = await fetch(
+    //   `https://www.thetvdb.com/dereferrer/series/${results?.mappings?.thetvdb}`
+    // );
 
-    const $ = load(await tvdb_res.text());
+    // const $ = load(await tvdb_res.text());
 
-    const logo =
-      $("#artwork-clearlogo")
-        .children()
-        .first()
-        .children()
-        .last()
-        .children()
-        .last()
-        .attr("href") ?? null;
+    // const logo =
+    //   $("#artwork-clearlogo")
+    //     .children()
+    //     .first()
+    //     .children()
+    //     .last()
+    //     .children()
+    //     .last()
+    //     .attr("href") ?? null;
+
+    const logo = null;
 
     res.status(200).json({ ...results, logo });
   } catch (err) {
