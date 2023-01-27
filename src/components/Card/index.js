@@ -21,7 +21,7 @@ const Card = (props) => {
   return (
     <CardContainer href={`/info/${id}`}>
       <TopContainer>
-        <ImageContainer src={image} height={400} width={400} />
+        <ImageContainer src={image} alt={title} height={400} width={400} />
       </TopContainer>
       <BottomContainer>
         <Title>{title}</Title>
@@ -29,7 +29,7 @@ const Card = (props) => {
           {!props?.genres.length ? (
             <Genre>??</Genre>
           ) : (
-            props.genres.map((genre) => <Genre key={genre}>{genre}</Genre>)
+            props.genres.map((genre) => <Genre key={`card-genre-${genre}`}>{genre}</Genre>)
           )}
         </Genres>
         <RatingContainer>

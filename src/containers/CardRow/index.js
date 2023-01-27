@@ -32,7 +32,7 @@ const CardRow = ({ data, splideRef, key }) => {
     >
       {data.map((anime) => (
         <SplideSlide>
-          <Card key={`${key}-${anime.id}`} {...anime} />
+          <Card key={`slide-${key}-${anime.id}`} {...anime} />
         </SplideSlide>
       ))}
     </Splide>

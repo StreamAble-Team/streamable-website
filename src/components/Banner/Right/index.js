@@ -11,7 +11,7 @@ const RightSideBanner = ({ data, total, index, setIndex, setActive }) => {
           return (
             <Item
               setRef={i === 1 ? setActive : null}
-              key={item.id}
+              key={`Banner-${item.id}`}
               {...item}
               index={i}
               active={i === index}

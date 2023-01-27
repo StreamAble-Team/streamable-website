@@ -27,7 +27,7 @@ const Item = (props) => {
     <Container active={props.active} onClick={changeIndex} ref={setRef}>
       <LeftContainer>
         <ImageContainer>
-          <Img src={props.image} alt="Logo" width={200} height={200} />
+          <Img src={props.image} alt={title} width={200} height={200} />
         </ImageContainer>
       </LeftContainer>
       <RightContainer>

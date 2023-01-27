@@ -22,13 +22,13 @@ const BoxCard = (props) => {
     <BoxCardContainer>
       <Link href={`/info/${id}`}>
         <TopContainer>
-          <ImageContainer src={cover} width={400} height={400} />
+          <ImageContainer src={cover} alt={title} width={400} height={400} />
         </TopContainer>
         <BottomContainer>
           <Title>{title}</Title>
           <Genres>
             {genres.map((genre) => (
-              <Genre key={genre}>{genre}</Genre>
+              <Genre key={`genre-${genre}`}>{genre}</Genre>
             ))}
           </Genres>
           {rating === "??" ? (

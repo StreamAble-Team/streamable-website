@@ -63,7 +63,7 @@ const Episodes = ({ episodes, cover, id, subOrDub }) => {
         {options.length > 1
           ? options.map((option) => (
               <EpisodePill
-                key={option.value}
+                key={`episodes-${option.value}`}
                 onClick={() => setPage(option.value)}
                 active={option.value === page}
               >
@@ -76,7 +76,7 @@ const Episodes = ({ episodes, cover, id, subOrDub }) => {
         {pageData.map((ep) => {
           return (
             <Episode
-              key={ep.id}
+              key={`episode-${ep.id}`}
               {...ep}
               backupImage={cover}
               href={`/info/${id}/${ep?.number}?dub=${realSubOrDub}`}
