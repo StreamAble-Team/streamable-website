@@ -12,7 +12,7 @@
     "@consumet/extensions": "^1.3.4",
     "@next/font": "13.1.5",
     "@splidejs/react-splide": "^0.7.12",
-    "@vidstack/react": "0.1.3",
+    "@vidstack/react": "^0.1.5",
     "axios": "^1.2.4",
     "cheerio": "^1.0.0-rc.12",
     "eslint": "8.32.0",
@@ -31,7 +31,7 @@
     "sharp": "^0.31.3",
     "styled-components": "^6.0.0-beta.9",
     "swr": "^2.0.1",
-    "vidstack": "0.1.3",
+    "vidstack": "^0.1.5",
     "webvtt-parser": "^2.2.0"
   }
 }

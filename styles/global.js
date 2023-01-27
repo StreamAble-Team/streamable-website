@@ -1,6 +1,8 @@
 import { rgba } from "polished";
 import { createGlobalStyle } from "styled-components";
 import { MediaBufferingIcon } from "../src/components/Watch/Buffering/Buffering.styles";
+import { VideoControlsContainer } from "../src/components/Watch/controls/controls.slider";
+import { SubtitlesWrapper } from "../src/components/Watch/Subtitles/Subtitles.styles";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -22,6 +24,16 @@ const GlobalStyle = createGlobalStyle`
     vds-media[waiting] ${MediaBufferingIcon} {
       opacity: 1;
       animation: spin 1s linear infinite;
+    }
+
+    vds-media:not([can-play]) ${VideoControlsContainer},
+    vds-media[user-idle] ${VideoControlsContainer} {
+      opacity: 0;
+    }
+
+    vds-media:not([can-play]) ${SubtitlesWrapper},
+    vds-media[user-idle] ${SubtitlesWrapper} {
+      padding-bottom: 40px;
     }
 
     @keyframes spin {
