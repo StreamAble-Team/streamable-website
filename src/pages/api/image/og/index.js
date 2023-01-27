@@ -1,4 +1,11 @@
 import { ImageResponse } from "@vercel/og";
+import sanitizer from "sanitize-html";
+
+export const textSanitizer = (textWithHTML) => {
+  return sanitizer(textWithHTML, {
+    allowedTags: [],
+  });
+};
 
 export const config = {
   runtime: "edge",
@@ -10,9 +17,9 @@ const getDetails = async (id) => {
   return data;
 };
 
-const BoldFont = fetch(
-  new URL("../../../../assets/fonts/Oswald-Bold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+// const BoldFont = fetch(
+//   new URL("../../../../assets/fonts/Oswald-Bold.ttf", import.meta.url)
+// ).then((res) => res.arrayBuffer());
 
 const RegularFont = fetch(
   new URL("../../../../assets/fonts/Oswald-Regular.ttf", import.meta.url)
@@ -20,8 +27,8 @@ const RegularFont = fetch(
 
 export default async function handler(req, res) {
   // const BoldFontData = await BoldFont;
-  const RegularFontData = await RegularFont;
   try {
+    const RegularFontData = await RegularFont;
     const { searchParams } = new URL(decodeURIComponent(req.url));
 
     const id = searchParams.has("id") ? searchParams.get("id") : null;
@@ -33,6 +40,9 @@ export default async function handler(req, res) {
     }
 
     const data = await getDetails(id);
+
+    if (!data) return new Response(`Missing data`, { status: 400 });
+
     let {
       title,
       cover,
@@ -44,10 +54,12 @@ export default async function handler(req, res) {
       releaseDate,
     } = data;
     title = title?.english || title?.romaji || title?.native;
-
-    console.log(season);
+    title = title.replace(/[\u{0080}-\u{10FFFF}]/gu, "");
 
     const color = "#7d5fff";
+
+    const titleLength = 80;
+
     return new ImageResponse(
       (
         <div
@@ -105,11 +117,12 @@ export default async function handler(req, res) {
                 fontSize: "55px",
                 width: "90%",
                 marginBottom: "4px",
-                fontWeight: "bold",
                 marginBottom: "0",
               }}
             >
-              {title}
+              {title.length > titleLength
+                ? title.substring(0, 80) + "..."
+                : title}
             </h4>
             <h4
               class="studio"
@@ -117,6 +130,8 @@ export default async function handler(req, res) {
                 fontWeight: "500",
                 color: color,
                 fontSize: "34px",
+                marginBottom: "0",
+                marginTop: 0,
               }}
             >
               {studios?.length > 0 ? studios.shift() : null}
