@@ -7,7 +7,7 @@ export const SubtitleText = styled.p`
   border: 1px solid rgba(255, 255, 255, 0.04);
 
   color: white;
-  font-size: 23px;
+  font-size: 25px;
   padding: 4px 12px;
   border-radius: 6px;
   text-align: center;

@@ -1,30 +1,30 @@
-import { useMediaElement, useMediaState } from "@vidstack/react";
+import {
+  useMediaElement,
+  useMediaRemote,
+  useMediaState,
+} from "@vidstack/react";
 import React, { useCallback, useEffect, useState } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 import VideoControls from "./controls";
 
 const MediaPlayerUI = (props) => {
   const media = useMediaElement();
   const { currentTime } = useMediaState();
-  const [hideControls, setHideControls] = useState(false);
 
-  // let duration = 5000;
-  // let timeout;
-  // const handleInactive = () => {
-  //   setHideControls((prev) => !prev);
+  const remote = useMediaRemote();
 
-  //   clearTimeout(timeout);
+  useHotkeys("f", () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else remote.enterFullscreen();
+  });
 
-  //   timeout = setTimeout(() => {
-  //     setHideControls(true);
-  //   }, duration);
-  // };
+  useHotkeys("space", () => {
+    remote.togglePaused();
+  });
 
-  // useEffect(() => {
-  //   window.addEventListener("mousemove", handleInactive);
-  //   return () => {
-  //     window.removeEventListener("mousemove", handleInactive);
-  //   };
-  // }, [handleInactive]);
+  useHotkeys("m", () => {
+    remote.toggleMuted();
+  });
 
   return (
     <>
