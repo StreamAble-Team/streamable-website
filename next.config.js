@@ -8,11 +8,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: [
-      "https://s4.anilist.co",
-      "s4.anilist.co",
-      "cors.proxy.consumet.org",
-    ],
+    domains: ["https://s4.anilist.co", "s4.anilist.co", "cors.consumet.stream"],
   },
   distDir: "dist",
 };
