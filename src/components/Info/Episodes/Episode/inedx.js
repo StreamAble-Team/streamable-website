@@ -10,7 +10,7 @@ import {
 const Episode = (props) => {
   let { id, title, episode, image, number, backupImage, href, active } = props;
 
-  const proxy = `https://cors.proxy.consumet.org`;
+  const proxy = `https://cors.consumet.stream`;
 
   return (
     <Container href={href} active={active}>

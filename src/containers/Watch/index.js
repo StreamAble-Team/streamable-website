@@ -30,7 +30,7 @@ const WatchContainer = ({ data, tree }) => {
     (ep) => Number(ep.number) === Number(episode)
   );
 
-  const proxy = `https://cors.proxy.consumet.org`;
+  const proxy = `https://cors.consumet.stream`;
 
   return (
     <>

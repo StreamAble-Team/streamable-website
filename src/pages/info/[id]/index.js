@@ -35,7 +35,7 @@ const Info = (props) => {
 
   const parsed = utils.textSanitizer(data?.description);
 
-  const proxy = `https://cors.proxy.consumet.org`;
+  const proxy = `https://cors.consumet.stream`;
 
   if (!data) return null;
   return (
