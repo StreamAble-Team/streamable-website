@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { ContainerNoPadding } from "../../../styles/shared";
 import { utils } from "../../../utils";
 import {
   Button,
@@ -57,31 +58,35 @@ const InfoTop = (props) => {
       <Img src={cover} width={1920} height={1080} />
       <Fade />
       <Wrapper>
-        {!logo ? null : (
-          <Logo src={`${proxy}/${logo}`} width={300} height={300} />
-        )}
-        <TitleContainer>
-          <EnglishTitle>{title}</EnglishTitle>
-        </TitleContainer>
-        <MetaInfoContainer>
-          <MetaInfoItem clickable={false}>
-            {totalEpisodes && totalEpisodes >= 0
-              ? `${totalEpisodes} Episodes`
-              : "??"}
-          </MetaInfoItem>
-          {!subOrDub ? null : (
-            <MetaInfoItem clickable={true}>
-              <Link href={`/info/${id}?dub=${realDub}`}>
-                {subOrDub === "sub" ? `Subbed` : `Dubbed`}
-              </Link>
+        <ContainerNoPadding>
+          {!logo ? null : (
+            <Logo src={`${proxy}/${logo}`} width={300} height={300} />
+          )}
+          <TitleContainer>
+            <EnglishTitle>{title}</EnglishTitle>
+          </TitleContainer>
+          <MetaInfoContainer>
+            <MetaInfoItem clickable={false}>
+              {totalEpisodes && totalEpisodes >= 0
+                ? `${totalEpisodes} Episodes`
+                : "??"}
             </MetaInfoItem>
-          )}
-          {!type ? null : <MetaInfoItem clickable={false}>{type}</MetaInfoItem>}
-          {!releaseDate ? null : (
-            <MetaInfoItem clickable={false}>{releaseDate}</MetaInfoItem>
-          )}
-        </MetaInfoContainer>
-        <Description>{parsed}</Description>
+            {!subOrDub ? null : (
+              <MetaInfoItem clickable={true}>
+                <Link href={`/info/${id}?dub=${realDub}`}>
+                  {subOrDub === "sub" ? `Subbed` : `Dubbed`}
+                </Link>
+              </MetaInfoItem>
+            )}
+            {!type ? null : (
+              <MetaInfoItem clickable={false}>{type}</MetaInfoItem>
+            )}
+            {!releaseDate ? null : (
+              <MetaInfoItem clickable={false}>{releaseDate}</MetaInfoItem>
+            )}
+          </MetaInfoContainer>
+          <Description>{parsed}</Description>
+        </ContainerNoPadding>
       </Wrapper>
       {/* <LeftContainer>
         <ImageContainer>

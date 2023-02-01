@@ -67,9 +67,7 @@ const Info = (props) => {
               data?.title?.native}
         </title>
       </Head>
-      <ContainerNoPadding>
-        <InfoContainer data={data} />
-      </ContainerNoPadding>
+      <InfoContainer data={data} />
     </>
   );
 };
