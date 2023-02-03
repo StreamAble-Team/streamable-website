@@ -1,4 +1,8 @@
-import { TimeSlider, useMediaElement, useMediaState } from "@vidstack/react";
+import {
+  MediaTimeSlider,
+  useMediaPlayer,
+  useMediaStore,
+} from "@vidstack/react";
 import React, { useEffect, useState } from "react";
 import { SliderWrapper, VideoTime } from "./Slider.styles";
 
@@ -7,8 +11,8 @@ const VideoSlider = () => {
   const [remaining, setRemaining] = useState("00:00");
   const [videoDuration, setVideoDuration] = useState("00:00");
 
-  const media = useMediaElement();
-  const { currentTime, duration } = useMediaState();
+  const media = useMediaPlayer();
+  const { currentTime, duration } = useMediaStore();
 
   useEffect(() => {
     if (!media) return;
@@ -27,7 +31,7 @@ const VideoSlider = () => {
   return (
     <SliderWrapper>
       <VideoTime>{time}</VideoTime>
-      <TimeSlider />
+      <MediaTimeSlider />
       <VideoTime>{remaining}</VideoTime>
     </SliderWrapper>
   );

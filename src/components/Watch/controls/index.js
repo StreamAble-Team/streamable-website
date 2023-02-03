@@ -1,10 +1,11 @@
 import React from "react";
+import VideoCaptionsButton from "./CaptionsButton";
 import {
   BottomContainer,
   MediaButtons,
   PlayPauseWrapper,
   VideoControlsContainer,
-  videoControlsWrapper,
+  VideoControlsWrapper,
 } from "./controls.slider";
 import VideoFullscreenButton from "./Fullscreen";
 import VideoPlayButton from "./PlayButton";
@@ -13,8 +14,9 @@ import VideoTitle from "./Title";
 import VideoVolume from "./Volume";
 
 const VideoControls = (props) => {
+  const { showSubtitles, setShowSubtitles } = props;
   return (
-    <videoControlsWrapper>
+    <VideoControlsWrapper>
       <VideoControlsContainer>
         <VideoSlider />
         <BottomContainer>
@@ -24,11 +26,15 @@ const VideoControls = (props) => {
           </PlayPauseWrapper>
           <VideoTitle {...props} />
           <MediaButtons>
+            <VideoCaptionsButton
+              showSubtitles={showSubtitles}
+              setShowSubtitles={setShowSubtitles}
+            />
             <VideoFullscreenButton />
           </MediaButtons>
         </BottomContainer>
       </VideoControlsContainer>
-    </videoControlsWrapper>
+    </VideoControlsWrapper>
   );
 };
 

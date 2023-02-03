@@ -10,7 +10,7 @@ export const VideoContainer = styled.div``;
 export const TopContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

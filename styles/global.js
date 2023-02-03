@@ -20,23 +20,23 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${({ theme }) => rgba(theme.base.mainColor, 0.5)};
       border-radius: 1rem;
     }
-    vds-media {
+    media-player {
       position: relative;
     }
 
-    vds-media:not([can-play]) ${MediaBufferingIcon},
-    vds-media[waiting] ${MediaBufferingIcon} {
+    media-player:not([can-play]) ${MediaBufferingIcon},
+    media-player[waiting] ${MediaBufferingIcon} {
       opacity: 1;
       animation: spin 1s linear infinite;
     }
 
-    vds-media:not([can-play]) ${VideoControlsContainer},
-    vds-media[user-idle] ${VideoControlsContainer} {
+    media-player:not([can-play]) ${VideoControlsContainer},
+    media-player[user-idle] ${VideoControlsContainer} {
       opacity: 0;
     }
 
-    vds-media:not([can-play]) ${SubtitlesWrapper},
-    vds-media[user-idle] ${SubtitlesWrapper} {
+    media-player:not([can-play]) ${SubtitlesWrapper},
+    media-player[user-idle] ${SubtitlesWrapper} {
       padding-bottom: 40px;
     }
 

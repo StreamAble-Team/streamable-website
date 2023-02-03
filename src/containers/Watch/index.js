@@ -34,21 +34,21 @@ const WatchContainer = ({ data, tree }) => {
 
   return (
     <>
-      {/* <TopContainer> */}
-      <VideoPlayer
-        subtitles={tree}
-        dub={dub}
-        src={highestQuality?.url}
-        proxy={proxy}
-        poster={data?.cover}
-        title={title?.english || title?.romaji || title?.native}
-        subTitle={
-          findEpisode && findEpisode?.title
-            ? `${episode} - ${findEpisode?.title}`
-            : `${episode} - Episode ${episode}`
-        }
-      />
-      {/* </TopContainer> */}
+      <TopContainer>
+        <VideoPlayer
+          subtitles={tree}
+          dub={dub}
+          src={highestQuality?.url}
+          proxy={proxy}
+          poster={data?.cover}
+          title={title?.english || title?.romaji || title?.native}
+          subTitle={
+            findEpisode && findEpisode?.title
+              ? `${episode} - ${findEpisode?.title}`
+              : `${episode} - Episode ${episode}`
+          }
+        />
+      </TopContainer>
       <Container>
         <EpisodesContainer>
           <Episodes {...data} />
