@@ -1,6 +1,6 @@
 {
   "name": "streamable-next",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,15 +13,15 @@
     "@next/font": "13.1.6",
     "@splidejs/react-splide": "^0.7.12",
     "@vercel/og": "^0.0.27",
-    "@vidstack/react": "^0.1.5",
-    "axios": "^1.3.0",
+    "@vidstack/react": "^0.2.2",
+    "axios": "^1.3.1",
     "cheerio": "^1.0.0-rc.12",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "hls.js": "^1.3.2",
     "lit": "^2.6.1",
-    "next": "13.1.5",
-    "next-sitemap": "^3.1.48",
+    "next": "13.1.6",
+    "next-sitemap": "^3.1.49",
     "nextjs-progressbar": "^0.0.16",
     "polished": "^4.2.2",
     "react": "18.2.0",
@@ -29,11 +29,11 @@
     "react-hotkeys-hook": "^4.3.4",
     "react-icons": "^4.7.1",
     "react-select": "^5.7.0",
-    "sanitize-html": "^2.8.1",
+    "sanitize-html": "^2.9.0",
     "sharp": "^0.31.3",
     "styled-components": "^6.0.0-beta.9",
     "swr": "^2.0.3",
-    "vidstack": "^0.1.5",
+    "vidstack": "^0.2.2",
     "webvtt-parser": "^2.2.0"
   }
 }
