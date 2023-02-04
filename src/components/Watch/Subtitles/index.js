@@ -6,7 +6,6 @@ import { SubtitlesWrapper } from "./Subtitles.styles";
 
 const VideoSubtitles = ({ subtitles, showSubtitles, setShowSubtitles }) => {
   const router = useRouter();
-  const [cues, setCues] = useState([]);
   const [subtitleHtml, setSubtitleHtml] = useState("");
   const media = useMediaPlayer();
 
@@ -20,7 +19,8 @@ const VideoSubtitles = ({ subtitles, showSubtitles, setShowSubtitles }) => {
   useEffect(() => {
     if (!media) return;
     if (!showSubtitles) return;
-    if (!subtitles || realDub) setShowSubtitles(false);
+
+    if (!subtitles) setShowSubtitles(false);
 
     const overlappingCues = subtitles?.cues?.filter(
       (cue) => cue.startTime <= currentTime && cue.endTime >= currentTime
@@ -31,9 +31,7 @@ const VideoSubtitles = ({ subtitles, showSubtitles, setShowSubtitles }) => {
     if (overlappingCues?.length > 0) {
       if (subtitleHtml != null) {
         let subText = "";
-        overlappingCues.forEach((cue) => {
-          subText += cue.text + "\n";
-        });
+        overlappingCues.forEach((cue) => (subText += cue.text + "\n"));
         setSubtitleHtml(subText.trimEnd());
       }
     } else {

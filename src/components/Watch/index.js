@@ -20,6 +20,7 @@ const VideoPlayer = ({ poster, proxy, src, title, subTitle, subtitles }) => {
         src={proxy ? `${proxy}/${src}` : src}
         poster={poster || ""}
         userIdleDelay={4000}
+        aspectRatio={16 / 9}
       >
         <MediaOutlet />
         <VideoBuffering />
