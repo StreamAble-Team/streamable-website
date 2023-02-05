@@ -34,7 +34,7 @@ export const getServerSideProps = async (context) => {
       const subtitlesEng =
         watchData?.subtitles?.find(
           (sub) => sub?.lang?.toLowerCase() === "english"
-        ) || url;
+        ) || undefined;
 
       const parser = new WebVTTParser();
       const webVtt = await axios.get(subtitlesEng?.url || null);

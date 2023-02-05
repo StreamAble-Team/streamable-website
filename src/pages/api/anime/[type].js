@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
   let results = [];
 
-  switch (type.toLowerCase()) {
+  switch (type?.toLowerCase()) {
     case "trending":
       results = await api.anilist.fetchTrendingAnime(page, perPage);
       break;

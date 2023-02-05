@@ -12,6 +12,8 @@ export default async function handler(req, res) {
       fetchFiller
     );
 
+    console.log({ results });
+
     // do not fetch if dub === false
     if (eval(isDub) === true) {
       let subresults = await api.anilist.fetchAnimeInfo(id, false, fetchFiller);

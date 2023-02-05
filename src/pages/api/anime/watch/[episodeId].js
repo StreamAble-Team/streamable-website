@@ -8,12 +8,12 @@ export default async function handler(req, res) {
   let anilist = api.anilist;
 
   try {
-    if (typeof provider !== "undefined") {
-      const possibleProvider = PROVIDERS_LIST.ANIME.find(
-        (p) => p.name.toLowerCase() === provider.toLocaleLowerCase()
-      );
-      anilist = new META.Anilist(possibleProvider);
-    }
+    // if (typeof provider !== "undefined") {
+    //   const possibleProvider = PROVIDERS_LIST.ANIME.find(
+    //     (p) => p.name.toLowerCase() === provider.toLocaleLowerCase()
+    //   );
+    //   anilist = new META.Anilist(possibleProvider);
+    // }
 
     let results = await anilist.fetchEpisodeSources(episodeId);
 
