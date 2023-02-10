@@ -11,7 +11,6 @@ export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
   const { id, episode } = params;
   let { dub } = query;
-  const { SERVER_URL: serverURL } = process.env;
 
   dub = !dub || eval(dub) === false ? false : true;
 
@@ -19,14 +18,15 @@ export const getServerSideProps = async (context) => {
   let tree = null;
 
   await axios
-    .get(`${serverURL}/api/anime/info/${id}?dub=${dub}`)
+    .get(`https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}`)
     .then(async (res) => {
       data = {};
       if (!res?.data) return (data = null);
       if (!res.data?.episodes[episode - 1]) return (data = null);
 
       const { data: watchData } = await axios.get(
-        `${serverURL}/api/anime/watch/` + res.data?.episodes[episode - 1].id
+        `https://api.streamable.moe/api/anilist/watch/` +
+          res.data?.episodes[episode - 1].id
       );
 
       if (!watchData) data = null;
@@ -37,9 +37,13 @@ export const getServerSideProps = async (context) => {
         ) || undefined;
 
       const parser = new WebVTTParser();
-      const webVtt = await axios.get(subtitlesEng?.url || null);
+      const webVtt = (await subtitlesEng?.url)
+        ? axios.get(subtitlesEng?.url || "")
+        : null;
 
-      const parsedTree = await parser.parse(webVtt?.data || url, "metadata");
+      const parsedTree = (await webVtt?.data)
+        ? parser.parse(webVtt?.data, "metadata")
+        : null;
       await parsedTree?.cues?.forEach((cue) => {
         cue.text = cue?.text?.replace(/\\h/g, "\n");
       });
@@ -47,7 +51,7 @@ export const getServerSideProps = async (context) => {
       tree = parsedTree;
 
       data = {
-        ...res.data,
+        ...res?.data,
         ...watchData,
       };
     });

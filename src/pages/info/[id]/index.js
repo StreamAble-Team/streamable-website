@@ -12,13 +12,14 @@ export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
   const { id } = params;
   let { dub } = query;
-  const { SERVER_URL: serverURL } = process.env;
 
   dub = !dub || eval(dub) === false ? false : true;
 
-  const { data } = await axios.get(
-    `${serverURL}/api/anime/info/${id}?dub=${dub}`
-  );
+  const { data } = await axios
+    .get(`https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}`)
+    .catch((err) => {
+      console.log(err);
+    });
 
   return {
     props: {
@@ -28,7 +29,6 @@ export const getServerSideProps = async (context) => {
 };
 
 const Info = (props) => {
-  const { SERVER_URL: serverURL } = process.env;
   const { data } = props;
 
   if (!data) return null;
