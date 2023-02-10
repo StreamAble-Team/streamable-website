@@ -1,25 +1,12 @@
-import { META, PROVIDERS_LIST } from "@consumet/extensions";
-import { api } from "../../../../utils";
+import axios from "axios";
 
 export default async function handler(req, res) {
   const { query: queryR } = req;
   const { episodeId, provider, server } = queryR;
 
-  let anilist = api.anilist;
+  const { data } = await axios.get(
+    `https://api.streamable.moe/api/anilist/watch/${episodeId}?provider=${provider}&server=${server}`
+  );
 
-  try {
-    // if (typeof provider !== "undefined") {
-    //   const possibleProvider = PROVIDERS_LIST.ANIME.find(
-    //     (p) => p.name.toLowerCase() === provider.toLocaleLowerCase()
-    //   );
-    //   anilist = new META.Anilist(possibleProvider);
-    // }
-
-    let results = await anilist.fetchEpisodeSources(episodeId);
-
-    res.status(200).json(results);
-  } catch (error) {
-    console.log(error?.message);
-    res.status(200).json({});
-  }
+  res.status(200).json(data);
 }
