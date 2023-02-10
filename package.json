@@ -12,6 +12,7 @@
     "@consumet/extensions": "^1.4.1",
     "@next/font": "13.1.6",
     "@splidejs/react-splide": "^0.7.12",
+    "@vercel/og": "^0.1.0",
     "@vidstack/react": "^0.2.3",
     "axios": "0.27.2",
     "cheerio": "^1.0.0-rc.12",
