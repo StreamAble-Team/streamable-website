@@ -15,6 +15,7 @@ import {
 import Search from "./Search";
 import NavProfile from "./Profile";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const NavBar = () => {
   const router = useRouter();
@@ -27,7 +28,9 @@ const NavBar = () => {
     <Container isInfo={isInfo}>
       <Wrapper>
         <ImageContainer>
-          <Image src={Logo} alt="Logo" />
+          <Link href={"/"}>
+            <Image src={Logo} alt="Logo" />
+          </Link>
         </ImageContainer>
         <Links show={clicked}>
           <NavLink href={"/"}>Home</NavLink>

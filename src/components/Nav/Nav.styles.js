@@ -38,6 +38,9 @@ export const ImageContainer = styled.div`
     height: 100%;
     object-fit: contain;
   }
+  & img {
+    pointer-events: none;
+  }
   @media (max-width: 768px) {
     width: 40%;
   }

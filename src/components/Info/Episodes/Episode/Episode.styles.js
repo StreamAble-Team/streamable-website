@@ -56,4 +56,10 @@ export const Container = styled(Link)`
   &:hover ${ImageContainer} {
     transform: scale(1.05);
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+    max-height: 250px;
+  }
 `;

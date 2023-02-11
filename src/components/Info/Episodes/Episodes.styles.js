@@ -4,7 +4,10 @@ import { rgba } from "polished";
 
 export const EpisodesContainer = styled.div`
   width: 100%;
-  margin-top: 1.5rem;
+  // margin-top: 1.5rem;
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const EpisodesList = styled.div`
@@ -16,6 +19,7 @@ export const EpisodesList = styled.div`
   @media (max-width: 568px) {
     justify-items: center;
     align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 `;
 

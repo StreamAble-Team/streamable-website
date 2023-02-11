@@ -15,7 +15,7 @@ const Episode = (props) => {
   return (
     <Container href={href} active={active}>
       <ImageContainer
-        src={`${proxy}/${!image ? backupImage : image}`}
+        src={`${!image ? backupImage : image}`}
         alt={title}
         width={150}
         height={150}
