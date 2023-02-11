@@ -36,6 +36,9 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   padding: 100px 40px 0;
   z-index: 2;
+  @media (max-width: 768px) {
+    padding: 100px 2rem;
+  }
 `;
 
 export const Logo = styled(Image)`
