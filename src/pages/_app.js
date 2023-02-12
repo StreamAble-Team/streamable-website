@@ -59,7 +59,11 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           name="keywords"
-          content="watch animes, animes online, anime adsfree, adfree anime, anime"
+          content="Streamable, Anime, Manga, Moe, Cartoons, Comics, Animation, Anime Streaming, Stream, Manga Streaming, Watch Anime, Watch Cartoons, Watch Comics, Video, Entertainment, Online Video, Streaming, Streamable.moe, Streamable Moe, Anime Online, Cartoons Online, Comics Online, Anime Videos, Cartoon Videos, Comic Videos, Streaming Service, Watch Videos, Online Streaming, Anime Watch, Cartoon Watch, Comic Watch, Streamable Videos, Anime Episodes, Cartoon Episodes, Comic Episodes, Streamable Anime, Streamable Cartoons, Streamable Comics, Anime Series, Cartoon Series, Comic Series, Anime TV, Cartoon TV, Comic TV, Streamable TV, Streamable Entertainment"
+        />
+        <meta
+          name="description"
+          content="Streamable.moe is a top-notch anime streaming platform that offers the best viewing experience for anime fans."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={`/favicon.ico`} />
