@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Episodes, Player, RightInfo, VideoPlayer } from "../../components";
 import { Container } from "../../styles/shared";
 import {
@@ -11,7 +11,8 @@ import {
 const WatchContainer = ({ data, tree }) => {
   const router = useRouter();
   const { id, episode, dub = false } = router.query;
-  const { sources, episodes, title } = data;
+  const { sources, episodes, title, malId } = data;
+  const [skipTimes, setSkipTimes] = useState(null);
   if (!data) return null;
 
   //find highest quality
@@ -32,6 +33,17 @@ const WatchContainer = ({ data, tree }) => {
 
   const proxy = `https://cors.consumet.stream`;
 
+  const getSkipTimes = async () => {
+    const { data: skipTimes } = await api.get(
+      `https://api.streamable.moe/api/aniskip/${malId}/${episode}`
+    );
+    setSkipTimes(skipTimes);
+  };
+
+  useEffect(() => {
+    getSkipTimes();
+  }, [malId]);
+
   return (
     <>
       <TopContainer>
@@ -47,6 +59,7 @@ const WatchContainer = ({ data, tree }) => {
               ? `${episode} - ${findEpisode?.title}`
               : `${episode} - Episode ${episode}`
           }
+          skipTimes={skipTimes}
         />
       </TopContainer>
       <Container>
