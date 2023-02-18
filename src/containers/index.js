@@ -5,6 +5,8 @@ import BoxRow from "./BoxRow";
 import InfoContainer from "./Info";
 import WatchContainer from "./Watch";
 import Popular from "./Popular";
+import FooterContainer from "./footer";
+
 export {
   Popular,
   Upcoming,
@@ -13,4 +15,5 @@ export {
   BoxRow,
   InfoContainer,
   WatchContainer,
+  FooterContainer,
 };

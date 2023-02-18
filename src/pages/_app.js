@@ -15,6 +15,7 @@ import "../../styles/load.css";
 import "@splidejs/react-splide/css";
 
 import favicon from "../../public/favicon.ico";
+import { FooterContainer } from "../containers";
 
 export default function App({ Component, pageProps }) {
   const G_TAG = process.env.NEXT_PUBLIC_ANALYTICS_ID;
@@ -74,6 +75,7 @@ export default function App({ Component, pageProps }) {
         <NavBar />
         <GlobalStyle />
         <Component {...pageProps} />
+        <FooterContainer />
       </ThemeProvider>
     </>
   );
