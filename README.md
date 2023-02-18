@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<a href="#">
+    <img src="https://raw.githubusercontent.com/StreamAble-Team/StreamAble-app/master/misc/images/logo.png"/ style="width: 550px" >
+</a>
+</div>
 
-## Getting Started
+<br />
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<br />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## DISCLAIMER
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The website is still in beta, so it may not work as expected. If you find any bugs, please report them in the [issues](https://github.com/StreamAble-Team/streamable-website/issues) section.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Features/Planned Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [x] Ad Free
+- [x] Fast
+- [x] Responsive
+- [x] Custom video player
+- [x] Dub support
+- [ ] Collections support (Plant to watch, watching, watched, backlog, etc)
+- [ ] Sync with anilist
+- [ ] Manga support
+- [ ] Download Episodes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br />
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Shoutouts 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p float="left">
+    <a href="https://github.com/aidanjuma" style="margin-right: 20px; width: 50px">
+        <img src="https://avatars.githubusercontent.com/u/53954981" alt="aidan" style="width: 50px; border-radius: 50%">
+    </a>
+    <a href="https://github.com/consumet/" style="width: 50px;">
+        <img src="https://avatars.githubusercontent.com/u/105397082" alt="aidan" style="width: 50px; border-radius: 50%">
+    </a>
+</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<strong>Thank you to aidan for being there when I need his help, be sure to check this legend out</strong
+<strong>Thank you to the consumet team and discord for making the amazing api and helping with the design</strong>
 
-## Deploy on Vercel
+<strong>And a big big big thank you to all that have downloaded the app so far, and gave feedback. You all warm my heart</strong>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+[![Licence](https://img.shields.io/github/license/tdanks2000/streamable-app?style=for-the-badge)](./LICENSE)
+
+<br />
+<br />
+<br />
+
+## ❤️
+
+StreamAble is made with the love and passion that I have for anime and manga. I hope you enjoy it as much as I do. If you have any suggestions or feedback, please contact me on discord (Prostarz#9361)
+
+<br />
+
+# ❤️
+
+Reminder that <strong><i>you are great, you are enough, and your presence is valued.</i></strong> If you are struggling with your mental health, please reach out to someone you love and consult a professional. You are not alone.
