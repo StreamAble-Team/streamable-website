@@ -1473,10 +1473,10 @@
     satori "0.2.2"
     yoga-wasm-web "0.3.0"
 
-"@vidstack/react@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@vidstack/react/-/react-0.2.3.tgz#730f0dad9a570844cb65b02ef0e4f418cdd2af77"
-  integrity sha512-O1fIGGPdTiNg9AtypgZsi8GrWQFk4qIJ5Qtw+PHM+/l7qXlW5m0QJUbjr9glKtJKq4k8tOeMlFWHnCO+i8Y/cg==
+"@vidstack/react@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@vidstack/react/-/react-0.3.2.tgz#afffabb3f91704af450439868a12701d6d032532"
+  integrity sha512-JbBhUb0CFzEP/LzwKNqLhvg3FW1OCON9G6rUUF9MkrpD8Y+6R3ZumUjCJ7zbmEbD6D7/ssPsoF4dh4lkAKAItA==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -3203,13 +3203,18 @@ make-dir@^2.1.0:
     pify "^4.0.1"
     semver "^5.6.0"
 
-maverick.js@^0.32.2:
+maverick.js@^0.32.3:
   version "0.32.3"
   resolved "https://registry.yarnpkg.com/maverick.js/-/maverick.js-0.32.3.tgz#a945d2c282aec2868d8d1a7a4f3b32d4625da8eb"
   integrity sha512-2jzhv6nmK5mw6gEuoq5MeEGUBEhF5keZxi3w7/2oIB4NSvfCBBSOyKH9fBagpvAAOtT5ySgVAJlivg9vUBdJsQ==
   dependencies:
     "@maverick-js/signals" "^5.9.1"
     type-fest "^2.17.0"
+
+media-icons@0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/media-icons/-/media-icons-0.3.2.tgz#d32dca36e387b8ed157f05d9416e38c206bc4614"
+  integrity sha512-lais6Q+15Awr2THMm99TVDITN1Rl6uZdG2cKUzn3EKYF4f6VQtEux0kigClwYa2RW9kOYDOblAv8iFajQ4ynVg==
 
 memoize-one@^6.0.0:
   version "6.0.0"
@@ -4279,12 +4284,13 @@ util-deprecate@^1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
-vidstack@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/vidstack/-/vidstack-0.2.3.tgz#5ab1af5954ed3bbca939a14e86b7a87f677ba8f0"
-  integrity sha512-XkEvsiKBkvVIpyHX6XdHm0M6Ub1RApu3vqp/RT8BDlzMcUCJCokn6HKoRyDfsuVQQQ0LuocOTs+KnfWSIj/KNQ==
+vidstack@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/vidstack/-/vidstack-0.3.2.tgz#e0338c9a009ca6a1ef9d7d96e1ea4f0d4223216e"
+  integrity sha512-dU6D5x1nXvdL2Y4dlKHTI3yt0YYJzne+ecQ2Lhvuda0iJ5CzFutY4vdNPHD8Ipwf6VN6zSwl+ekLVzlhHuPVpA==
   dependencies:
-    maverick.js "^0.32.2"
+    maverick.js "^0.32.3"
+    media-icons "0.3.2"
     type-fest "^3.5.0"
 
 webvtt-parser@^2.2.0:

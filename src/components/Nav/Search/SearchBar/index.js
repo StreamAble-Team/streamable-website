@@ -5,6 +5,7 @@ const SearchBar = ({ searchTerm, setSearchTerm, onSubmit }) => {
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
+
   return (
     <Container onSubmit={onSubmit}>
       <Input
