@@ -52,7 +52,7 @@ const InfoTop = (props) => {
 
   const realDub = subOrDub === "dub" ? false : true;
 
-  const proxy = `https://cors.consumet.stream`;
+  const proxy = `https://cors.streamable.moe`;
   return (
     <InfoTopContainer src={cover}>
       <Img src={cover} width={1920} height={1080} />

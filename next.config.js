@@ -11,7 +11,7 @@ const nextConfig = {
     domains: [
       "https://s4.anilist.co",
       "s4.anilist.co",
-      "cors.consumet.stream",
+      "cors.streamable.moe",
       "artworks.thetvdb.com",
     ],
   },
