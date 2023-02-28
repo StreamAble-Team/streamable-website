@@ -9,16 +9,18 @@ import {
 } from "./controls.slider";
 import VideoFullscreenButton from "./Fullscreen";
 import VideoPlayButton from "./PlayButton";
+import SkipButton from "./SkipButton";
 import VideoSlider from "./Slider";
 import VideoTitle from "./Title";
 import VideoVolume from "./Volume";
 
 const VideoControls = (props) => {
-  const { showSubtitles, setShowSubtitles } = props;
+  const { showSubtitles, setShowSubtitles, skipTimes } = props;
   return (
     <VideoControlsWrapper>
       <VideoControlsContainer>
-        <VideoSlider />
+        <SkipButton skipTimes={skipTimes} />
+        <VideoSlider skipTimes={skipTimes} />
         <BottomContainer>
           <PlayPauseWrapper>
             <VideoPlayButton />

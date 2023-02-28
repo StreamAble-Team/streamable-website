@@ -11,7 +11,15 @@ import MediaPlayerUI from "./MediaPlayerUi";
 import { VideoContainer } from "./styles";
 import VideoSubtitles from "./Subtitles";
 
-const VideoPlayer = ({ poster, proxy, src, title, subTitle, subtitles }) => {
+const VideoPlayer = ({
+  poster,
+  proxy,
+  src,
+  title,
+  subTitle,
+  subtitles,
+  skipTimes,
+}) => {
   const [showSubtitles, setShowSubtitles] = useState(true);
 
   return (
@@ -34,6 +42,7 @@ const VideoPlayer = ({ poster, proxy, src, title, subTitle, subtitles }) => {
           subTitle={subTitle || "??"}
           showSubtitles={showSubtitles}
           setShowSubtitles={setShowSubtitles}
+          skipTimes={skipTimes}
         />
       </MediaPlayer>
     </VideoContainer>

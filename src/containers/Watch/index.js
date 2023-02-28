@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { Episodes, Player, RightInfo, VideoPlayer } from "../../components";
 import { Container } from "../../styles/shared";
+import axios from "axios";
+
 import {
   EpisodesContainer,
   TopContainer,
@@ -34,7 +36,7 @@ const WatchContainer = ({ data, tree }) => {
   const proxy = `https://cors.streamable.moe`;
 
   const getSkipTimes = async () => {
-    const { data: skipTimes } = await api.get(
+    const { data: skipTimes } = await axios.get(
       `https://api.streamable.moe/api/aniskip/${malId}/${episode}`
     );
     setSkipTimes(skipTimes);
