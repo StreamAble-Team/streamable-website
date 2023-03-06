@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ContainerNoPadding } from "../../../styles/shared";
 import { utils } from "../../../utils";
 import {
@@ -52,6 +52,18 @@ const InfoTop = (props) => {
 
   const realDub = subOrDub === "dub" ? false : true;
 
+  const getProviderLS = () => {
+    const provider = localStorage.getItem("provider");
+    if (provider) return provider;
+    return "gogoanime";
+  };
+
+  const [provider, setProvider] = useState("gogoanime");
+
+  useEffect(() => {
+    setProvider(getProviderLS());
+  }, [localStorage.getItem("provider")]);
+
   const proxy = `https://cors.streamable.moe`;
   return (
     <InfoTopContainer src={cover}>
@@ -73,7 +85,7 @@ const InfoTop = (props) => {
             </MetaInfoItem>
             {!subOrDub ? null : (
               <MetaInfoItem clickable={true}>
-                <Link href={`/info/${id}?dub=${realDub}`}>
+                <Link href={`/info/${id}?dub=${realDub}&provider=${provider}`}>
                   {subOrDub === "sub" ? `Subbed` : `Dubbed`}
                 </Link>
               </MetaInfoItem>
