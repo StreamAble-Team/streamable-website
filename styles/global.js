@@ -10,13 +10,13 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${({ theme }) => theme.base.bg};
       color: ${({ theme }) => theme.text.primary};
     }
-    body::-webkit-scrollbar {
+    ::-webkit-scrollbar {
       width: 8px;             
     }
-    body::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
       background-color: ${({ theme }) => theme.base.navBg};
     }
-    body::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => rgba(theme.base.mainColor, 0.5)};
       border-radius: 1rem;
     }

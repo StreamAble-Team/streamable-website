@@ -21,15 +21,22 @@ export const getServerSideProps = async (context) => {
       console.log(err);
     });
 
+  const { data: providers } = await axios
+    .get(`https://api.streamable.moe/api/utils/providers/anime`)
+    .catch((err) => {
+      console.log(err);
+    });
+
   return {
     props: {
       data,
+      providers,
     },
   };
 };
 
 const Info = (props) => {
-  const { data } = props;
+  const { data, providers } = props;
 
   if (!data) return null;
 
@@ -67,7 +74,7 @@ const Info = (props) => {
               data?.title?.native}
         </title>
       </Head>
-      <InfoContainer data={data} />
+      <InfoContainer data={data} providers={providers} />
     </>
   );
 };

@@ -14,8 +14,8 @@ export const Img = styled(Image)`
   grid-area: 1/1/1/1;
   object-fit: cover;
   object-position: center;
-  height: 600px;
-  width: calc(100vw - 8px);
+  height: 550px;
+  width: calc(100% - 8px);
 `;
 
 export const Fade = styled.div`
@@ -23,14 +23,14 @@ export const Fade = styled.div`
 
   background: ${({ theme }) => `
   linear-gradient(0deg, ${theme.base.bg}, rgba(23,24,28,.6))`};
-  height: 600px;
-  width: calc(100vw - 8px);
+  height: 550px;
+  width: calc(100% - 8px);
 `;
 
 export const Wrapper = styled.div`
   grid-area: 1/1/1/1;
-  height: 600px;
-  width: calc(100vw - 8px);
+  height: 550px;
+  width: calc(100% - 8px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
