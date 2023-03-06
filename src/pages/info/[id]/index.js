@@ -13,7 +13,7 @@ export const getServerSideProps = async (context) => {
   const { id } = params;
   let { dub, provider } = query;
 
-  dub = !dub || eval(dub) === false ? false : true;
+  dub = !dub || dub === "false" || dub === false ? false : true;
 
   const { data } = await axios
     .get(

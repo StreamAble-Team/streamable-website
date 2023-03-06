@@ -11,7 +11,7 @@ const VideoSubtitles = ({ subtitles, showSubtitles, setShowSubtitles }) => {
 
   const { dub } = router.query;
 
-  const realDub = eval(dub) === false ? false : true;
+  const realDub = dub === "false" || dub === false ? false : true;
   // - This is a live subscription to the paused store.
   // - All stores are lazily subscribed to on prop access.
   const { currentTime } = useMediaStore();

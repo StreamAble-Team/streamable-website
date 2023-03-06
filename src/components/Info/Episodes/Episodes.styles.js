@@ -8,6 +8,9 @@ export const EpisodesContainer = styled.div`
   @media (max-width: 768px) {
     padding: 0 2rem;
   }
+  @media (max-width: 1700px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const EpisodesList = styled.div`
@@ -83,6 +86,5 @@ export const EpisodePill = styled.div`
     background-color: ${({ theme }) => theme.base.mainColor};
   }
 `;
-
 
 export const DropdownContainer = styled.div``;

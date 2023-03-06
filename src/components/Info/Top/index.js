@@ -62,7 +62,7 @@ const InfoTop = (props) => {
 
   useEffect(() => {
     setProvider(getProviderLS());
-  }, [localStorage.getItem("provider")]);
+  }, [provider]);
 
   const proxy = `https://cors.streamable.moe`;
   return (

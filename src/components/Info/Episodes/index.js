@@ -63,7 +63,7 @@ const Episodes = ({ episodes, cover, id, subOrDub }) => {
 
   useEffect(() => {
     setProvider(getProviderLS());
-  }, [localStorage.getItem("provider")]);
+  }, [provider]);
 
   const realSubOrDub = subOrDub === "dub" ? true : false;
   return (

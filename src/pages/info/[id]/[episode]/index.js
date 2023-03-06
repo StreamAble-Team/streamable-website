@@ -12,7 +12,7 @@ export const getServerSideProps = async (context) => {
   const { id, episode } = params;
   let { dub, provider } = query;
 
-  dub = !dub || eval(dub) === false ? false : true;
+  dub = !dub || dub === "false" || dub === false ? false : true;
 
   let data = {};
   let tree = null;
@@ -33,8 +33,6 @@ export const getServerSideProps = async (context) => {
           res.data?.episodes[episode - 1].id
         }?provider=${provider}`
       );
-
-      console.log();
 
       if (!watchData) data = null;
 
@@ -61,6 +59,9 @@ export const getServerSideProps = async (context) => {
         ...res?.data,
         ...watchData,
       };
+    })
+    .catch((err) => {
+      console.log(err);
     });
 
   return {

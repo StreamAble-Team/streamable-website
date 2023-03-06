@@ -63,7 +63,7 @@ const InfoContainer = ({ data, providers }) => {
   return (
     <div>
       <InfoTop {...data} />
-      <Container>
+      <ContainerNoPadding>
         <DropdownContainer>
           <Dropdown
             data={providerData}
@@ -72,8 +72,8 @@ const InfoContainer = ({ data, providers }) => {
             setSelected={setSelectedProvider}
           />
         </DropdownContainer>
-        <Episodes {...data} />
-      </Container>
+        {data?.episodes ? <Episodes {...data} /> : null}
+      </ContainerNoPadding>
     </div>
   );
 };
