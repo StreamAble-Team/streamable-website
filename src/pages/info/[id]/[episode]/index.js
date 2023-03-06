@@ -10,7 +10,7 @@ import Four0FourContainer from "../../../../containers/404";
 export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
   const { id, episode } = params;
-  let { dub } = query;
+  let { dub, provider } = query;
 
   dub = !dub || eval(dub) === false ? false : true;
 
@@ -18,16 +18,23 @@ export const getServerSideProps = async (context) => {
   let tree = null;
 
   await axios
-    .get(`https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}`)
+    .get(
+      `https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}&provider=${
+        provider ? provider : "gogoanime"
+      }`
+    )
     .then(async (res) => {
       data = {};
       if (!res?.data) return (data = null);
       if (!res.data?.episodes[episode - 1]) return (data = null);
 
       const { data: watchData } = await axios.get(
-        `https://api.streamable.moe/api/anilist/watch/` +
+        `https://api.streamable.moe/api/anilist/watch/${
           res.data?.episodes[episode - 1].id
+        }?provider=${provider}`
       );
+
+      console.log();
 
       if (!watchData) data = null;
 

@@ -53,7 +53,7 @@ const WatchContainer = ({ data, tree }) => {
           subtitles={tree}
           dub={dub}
           src={highestQuality?.url}
-          // proxy={proxy}
+          proxy={proxy}
           poster={data?.cover}
           title={title?.english || title?.romaji || title?.native}
           subTitle={

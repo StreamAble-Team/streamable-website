@@ -4,23 +4,25 @@ import { InfoTop } from "../../components/Info";
 import { Container, ContainerNoPadding } from "../../styles/shared";
 import { Dropdown } from "../../components/Shared";
 import { DropdownContainer } from "./info.styles";
+import { useRouter } from "next/router";
 
 const InfoContainer = ({ data, providers }) => {
+  const navigation = useRouter();
   const [selectedProvider, setSelectedProvider] = useState(null);
 
-  const bannedProviders = ["enime", "crunchyroll", "bilibili", "enime"];
-  const providerData = providers?.map((item) => ({
-    label: item.name,
-    value: item.name,
-    image: item.logo,
-  }));
+  const allowedProviders = ["gogoanime", "9anime", "zoro"];
+  // map providers to dropdown data and filter out providers that are not allowed
+  const providerData = providers
+    .map((provider) => ({
+      value: provider.name,
+      label: provider.name,
+      image: provider.logo,
+    }))
+    .filter((provider) =>
+      allowedProviders.includes(provider.value.toLowerCase())
+    );
 
-  // remove banned providers
-  providerData.forEach((item, index) => {
-    if (bannedProviders.includes(item.value.toLowerCase())) {
-      providerData.splice(index, 1);
-    }
-  });
+  console.log("providerData");
 
   //sort providers and put gogoanime first
   providerData.sort((a, b) => {
@@ -29,8 +31,17 @@ const InfoContainer = ({ data, providers }) => {
     return 0;
   });
 
-  const onSelect = (item) => {
-    localStorage.setItem("provider", item?.value || "gogoanime");
+  const onSelect = async (item) => {
+    const providerLS = localStorage.getItem("provider");
+    await localStorage.setItem("provider", item?.value || "gogoanime");
+    // add provider to url and dub dont change if it is already there
+    if (providerLS !== item?.value) {
+      navigation.push(
+        `/info/${data?.id}?provider=${item?.value || "gogoanime"}&dub=${
+          navigation?.query?.dub || "false"
+        }`
+      );
+    }
   };
 
   const checkLocalStorage = () => {
@@ -52,7 +63,7 @@ const InfoContainer = ({ data, providers }) => {
   return (
     <div>
       <InfoTop {...data} />
-      <ContainerNoPadding>
+      <Container>
         <DropdownContainer>
           <Dropdown
             data={providerData}
@@ -62,7 +73,7 @@ const InfoContainer = ({ data, providers }) => {
           />
         </DropdownContainer>
         <Episodes {...data} />
-      </ContainerNoPadding>
+      </Container>
     </div>
   );
 };

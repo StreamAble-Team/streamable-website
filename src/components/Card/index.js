@@ -29,7 +29,9 @@ const Card = (props) => {
           {!props?.genres.length ? (
             <Genre>??</Genre>
           ) : (
-            props.genres.map((genre) => <Genre key={`card-genre-${genre}`}>{genre}</Genre>)
+            props.genres.map((genre) => (
+              <Genre key={`card-genre-${genre}`}>{genre}</Genre>
+            ))
           )}
         </Genres>
         <RatingContainer>

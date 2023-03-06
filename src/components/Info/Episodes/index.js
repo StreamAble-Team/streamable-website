@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Episode from "./Episode/inedx";
 import {
   EpisodePill,
@@ -53,6 +53,18 @@ const Episodes = ({ episodes, cover, id, subOrDub }) => {
     });
   }
 
+  const getProviderLS = () => {
+    const provider = localStorage.getItem("provider");
+    if (provider) return provider;
+    return "gogoanime";
+  };
+
+  const [provider, setProvider] = useState("gogoanime");
+
+  useEffect(() => {
+    setProvider(getProviderLS());
+  }, [localStorage.getItem("provider")]);
+
   const realSubOrDub = subOrDub === "dub" ? true : false;
   return (
     <EpisodesContainer>
@@ -79,7 +91,7 @@ const Episodes = ({ episodes, cover, id, subOrDub }) => {
               key={`episode-${ep.id}`}
               {...ep}
               backupImage={cover}
-              href={`/info/${id}/${ep?.number}?dub=${realSubOrDub}`}
+              href={`/info/${id}/${ep?.number}?dub=${realSubOrDub}&provider=${provider}`}
               active={Number(ep?.number) === Number(episode)}
             />
           );

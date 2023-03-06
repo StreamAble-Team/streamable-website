@@ -11,12 +11,16 @@ import axios from "axios";
 export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
   const { id } = params;
-  let { dub } = query;
+  let { dub, provider } = query;
 
   dub = !dub || eval(dub) === false ? false : true;
 
   const { data } = await axios
-    .get(`https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}`)
+    .get(
+      `https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}&provider=${
+        provider ? provider : "gogoanime"
+      }`
+    )
     .catch((err) => {
       console.log(err);
     });
