@@ -33,7 +33,7 @@ const WatchContainer = ({ data, tree }) => {
     (ep) => Number(ep.number) === Number(episode)
   );
 
-  const proxy = `https://cors.streamable.moe`;
+  const proxy = `https://cors.streamable.moe/proxy/cors`;
 
   const getSkipTimes = async () => {
     const { data: skipTimes } = await axios.get(

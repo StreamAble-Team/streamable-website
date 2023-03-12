@@ -46,7 +46,7 @@ const Info = (props) => {
 
   const parsed = utils.textSanitizer(data?.description);
 
-  const proxy = `https://cors.streamable.moe`;
+  const proxy = `https://cors.streamable.moe/proxy/cors`;
 
   if (!data) return null;
   return (
