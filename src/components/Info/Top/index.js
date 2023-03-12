@@ -64,7 +64,7 @@ const InfoTop = (props) => {
     setProvider(getProviderLS());
   }, [provider]);
 
-  const proxy = `https://cors.streamable.moe/proxy/cors`;
+  const proxy = `https://cors.streamable.moe`;
   return (
     <InfoTopContainer src={cover}>
       <Img src={cover} width={1920} height={1080} />
