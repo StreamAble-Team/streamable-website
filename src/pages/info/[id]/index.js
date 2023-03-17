@@ -15,9 +15,9 @@ export const getServerSideProps = async (context) => {
 
   dub = !dub || dub === "false" || dub === false ? false : true;
 
-  const { data } = await axios
-    .get(
-      `https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}&provider=${
+  const data = await api
+    .getData(
+      `anilist/info/${id}?dub=${dub}&provider=${
         provider ? provider : "gogoanime"
       }`
     )
@@ -25,11 +25,9 @@ export const getServerSideProps = async (context) => {
       console.log(err);
     });
 
-  const { data: providers } = await axios
-    .get(`https://api.streamable.moe/api/utils/providers/anime`)
-    .catch((err) => {
-      console.log(err);
-    });
+  const providers = await api.getData(`utils/providers/anime`).catch((err) => {
+    console.log(err);
+  });
 
   return {
     props: {

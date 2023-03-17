@@ -10,14 +10,15 @@ import {
   RightArrow,
   Title,
   TitleWrapper,
-  Wrapper,
 } from "../styles";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import CardRow from "../CardRow";
 
 const Upcoming = () => {
   const splideRef = useRef(null);
-  const { data, error } = useSWR("/api/anime/upcoming", api.fetcher);
+  const { data, error } = useSWR(
+    "https://api.streamable.moe/api/anilist/upcoming",
+    api.fetcher
+  );
 
   if (!data || error) return null;
   return (
