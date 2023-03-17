@@ -1,12 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
-import useSWR from "swr";
 import { api, utils } from "../../../utils";
-import { ContainerNoPadding } from "../../../styles/shared";
 import { InfoContainer } from "../../../containers";
-import { Episodes } from "../../../components";
 import Head from "next/head";
-import axios from "axios";
 
 export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
