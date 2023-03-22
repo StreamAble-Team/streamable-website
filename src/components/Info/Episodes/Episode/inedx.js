@@ -10,7 +10,7 @@ import {
 const Episode = (props) => {
   let { id, title, episode, image, number, backupImage, href, active } = props;
 
-  const proxy = `https://cors.streamable.moe`;
+  const proxy = `https://proxy.vnxservers.com`;
 
   return (
     <Container href={href} active={active}>

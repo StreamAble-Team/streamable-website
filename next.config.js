@@ -13,6 +13,7 @@ const nextConfig = {
       "s4.anilist.co",
       "cors.streamable.moe",
       "artworks.thetvdb.com",
+      "proxy.vnxservers.com",
     ],
   },
   distDir: "dist",

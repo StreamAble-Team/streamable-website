@@ -24,7 +24,7 @@ let data = [
 const Dropdown = ({ data, onSelect, selected, setSelected }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const proxy = `https://cors.streamable.moe`;
+  const proxy = `https://proxy.vnxservers.com`;
 
   const renderDropdown = () => {
     if (isOpen) {
