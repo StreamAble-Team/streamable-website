@@ -5,8 +5,16 @@ import { TopRated, Upcoming } from "../containers";
 import { Container } from "../styles/shared";
 import { api } from "../utils";
 
-export default function Home() {
-  const { data, error } = useSWR("/api/anime/trending", api.fetcher);
+export const getServerSideProps = async () => {
+  const data = await api.getData("anilist/trending");
+
+  return {
+    props: { data },
+  };
+};
+
+export default function Home(props) {
+  const { data } = props;
 
   return (
     <>

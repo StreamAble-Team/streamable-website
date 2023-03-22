@@ -14,7 +14,10 @@ import {
 
 const Popular = () => {
   const splideRef = useRef(null);
-  const { data, error } = useSWR("/api/anime/popular", api.fetcher);
+  const { data, error } = useSWR(
+    "https://api.streamable.moe/api/anilist/popular",
+    api.fetcher
+  );
 
   if (!data || error) return null;
   return (

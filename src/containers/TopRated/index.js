@@ -10,12 +10,14 @@ import {
   RightArrow,
   Title,
   TitleWrapper,
-  Wrapper,
 } from "../styles";
 
 const TopRated = () => {
   const splideRef = useRef(null);
-  const { data, error } = useSWR("/api/anime/top-rated", api.fetcher);
+  const { data, error } = useSWR(
+    "https://api.streamable.moe/api/anilist/top-rated",
+    api.fetcher
+  );
 
   if (!data || error) return null;
   return (

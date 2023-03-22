@@ -1,12 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
-import useSWR from "swr";
 import { api, utils } from "../../../utils";
-import { ContainerNoPadding } from "../../../styles/shared";
 import { InfoContainer } from "../../../containers";
-import { Episodes } from "../../../components";
 import Head from "next/head";
-import axios from "axios";
 
 export const getServerSideProps = async (context) => {
   const { params, query, resolvedUrl } = context;
@@ -15,9 +11,9 @@ export const getServerSideProps = async (context) => {
 
   dub = !dub || dub === "false" || dub === false ? false : true;
 
-  const { data } = await axios
-    .get(
-      `https://api.streamable.moe/api/anilist/info/${id}?dub=${dub}&provider=${
+  const data = await api
+    .getData(
+      `anilist/info/${id}?dub=${dub}&provider=${
         provider ? provider : "gogoanime"
       }`
     )
@@ -25,11 +21,9 @@ export const getServerSideProps = async (context) => {
       console.log(err);
     });
 
-  const { data: providers } = await axios
-    .get(`https://api.streamable.moe/api/utils/providers/anime`)
-    .catch((err) => {
-      console.log(err);
-    });
+  const providers = await api.getData(`utils/providers/anime`).catch((err) => {
+    console.log(err);
+  });
 
   return {
     props: {
