@@ -5,7 +5,5 @@ export const getData = async (path) => {
 
   const data = await fetcher(url);
 
-  console.log(data);
-
   return data;
 };

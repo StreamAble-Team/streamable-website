@@ -26,8 +26,6 @@ const VideoSubtitles = ({ subtitles, showSubtitles, setShowSubtitles }) => {
       (cue) => cue.startTime <= currentTime && cue.endTime >= currentTime
     );
 
-    console.log(currentTime, overlappingCues);
-
     if (overlappingCues?.length > 0) {
       if (subtitleHtml != null) {
         let subText = "";

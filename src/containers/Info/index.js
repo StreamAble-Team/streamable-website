@@ -22,8 +22,6 @@ const InfoContainer = ({ data, providers }) => {
       allowedProviders.includes(provider.value.toLowerCase())
     );
 
-  console.log("providerData");
-
   //sort providers and put gogoanime first
   providerData.sort((a, b) => {
     if (a.value.toLowerCase() === "gogoanime") return -1;

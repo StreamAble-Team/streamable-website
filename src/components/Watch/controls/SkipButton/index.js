@@ -27,9 +27,6 @@ const SkipButton = (props) => {
     if (!media) return;
     if (!opSkipTime) return;
 
-    console.log("currentTime", currentTime);
-    console.log("opSkipTime.startTime", opSkipTime.interval?.startTime);
-
     //show the skip button if the current time is greater than the start time of the op skip time and less than the end time of the op skip time
     if (
       currentTime > opSkipTime.interval?.startTime &&
