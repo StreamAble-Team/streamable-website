@@ -35,6 +35,8 @@ const NavBar = () => {
         <Links show={clicked}>
           <NavLink href={"/"}>Home</NavLink>
           <NavLink href={"/anime"}>Anime</NavLink>
+          <NavLink href={"/app"}>App</NavLink>
+          <NavLink href={"/donate"}>Donate</NavLink>
           {/* <NavLink href={"/genres"}>Genres</NavLink> */}
         </Links>
         <Search />

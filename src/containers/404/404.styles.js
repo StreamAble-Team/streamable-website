@@ -2,9 +2,6 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -12,11 +9,13 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  overflow: hidden;
 `;
 
 export const LeftContainer = styled.div`
   width: 60%;
   height: 100%;
+
   display: flex;
   flex-direction: row;
   align-items: center;

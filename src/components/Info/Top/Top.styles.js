@@ -96,17 +96,17 @@ export const MetaInfoItem = styled.div`
 `;
 
 export const Description = styled.p`
-  font-size: 0.9rem;
-  width: 40vw;
+  font-size: 1rem;
+  width: 50vw;
   text-align: start;
   color: #d7d7d7;
   margin: 0;
   padding-top: 1.5rem;
-  max-lines: 5;
+  max-lines: 6;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   @media (max-width: 768px) {
     width: 100%;

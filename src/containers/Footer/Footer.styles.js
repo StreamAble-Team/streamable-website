@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export const FooterWrapper = styled.div`
+  position: relative;
   margin-top: 5rem;
   width: 100%;
   background-color: ${({ theme }) => theme.base.navBg};

@@ -6,6 +6,8 @@ import InfoContainer from "./Info";
 import WatchContainer from "./Watch";
 import Popular from "./Popular";
 import FooterContainer from "./Footer";
+import AppContainer from "./AppContainer";
+import DonationContainer from "./DonateContainer";
 
 export {
   Popular,
@@ -16,4 +18,6 @@ export {
   InfoContainer,
   WatchContainer,
   FooterContainer,
+  AppContainer,
+  DonationContainer,
 };
