@@ -16,7 +16,7 @@ const DonationContainer = () => {
     <Wrapper>
       <Title>I am asking for your support</Title>
       <SubText>
-        Server costs are increasing, and i need some help convering them
+        Server costs are increasing, and i need some help covering them
       </SubText>
       <Separator />
       <DonateMethods>
