@@ -9,12 +9,22 @@
 
 <url>
   <loc>https://streamable.moe/</loc>
-  <lastmod>2023-01-20T19:57:48+00:00</lastmod>
+  <lastmod>2023-03-27T23:55:02+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://streamable.moe/anime</loc>
-  <lastmod>2023-01-20T19:57:48+00:00</lastmod>
+  <lastmod>2023-03-27T23:55:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://streamable.moe/app</loc>
+  <lastmod>2023-03-27T23:55:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://streamable.moe/donate</loc>
+  <lastmod>2023-03-27T23:55:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
