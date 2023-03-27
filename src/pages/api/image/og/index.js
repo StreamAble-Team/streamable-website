@@ -8,7 +8,7 @@ export const textSanitizer = (textWithHTML) => {
 };
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 const getDetails = async (id) => {
