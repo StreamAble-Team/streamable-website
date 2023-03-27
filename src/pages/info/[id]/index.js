@@ -46,6 +46,8 @@ const Info = (props) => {
   return (
     <>
       <Head>
+        <meta name="description" content={parsed} />
+        <meta name="keywords" content="Streamable" />
         <meta property="og:title" content="StreamAble" />
         <meta property="og:description" content={parsed} />
         <meta name="twitter:card" content="summary_large_image" />

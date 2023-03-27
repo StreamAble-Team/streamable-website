@@ -81,6 +81,8 @@ const EpisodePage = (props) => {
   return (
     <>
       <Head>
+        <meta name="description" content={parsed} />
+        <meta name="keywords" content={parsed} />
         <meta property="og:title" content="StreamAble" />
         <meta property="og:description" content={parsed} />
         <meta name="twitter:card" content="summary_large_image" />

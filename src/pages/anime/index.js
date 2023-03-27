@@ -8,7 +8,9 @@ const AnimePage = () => {
   return (
     <>
       <Head>
-        <title>Streamable - Anime</title>
+        <title>Streamable | Anime</title>
+        <meta name="description" content="Anime" />
+        <meta name="keywords" content="Anime, Streamable" />
       </Head>
       <Container>
         <AnimePageContainer>
