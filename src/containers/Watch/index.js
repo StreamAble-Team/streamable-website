@@ -24,6 +24,7 @@ const WatchContainer = ({ data, tree }) => {
       source.quality.includes("720") ||
       source.quality.includes("default")
   );
+
   if (!highestQuality) {
     if (sources?.length) highestQuality = sources[0];
     highestQuality = "";
@@ -33,6 +34,7 @@ const WatchContainer = ({ data, tree }) => {
     (ep) => Number(ep.number) === Number(episode)
   );
 
+  // const proxy = `http://localhost:5196`;
   const proxy = `https://proxy.vnxservers.com`;
 
   const getSkipTimes = async () => {
@@ -55,6 +57,8 @@ const WatchContainer = ({ data, tree }) => {
           src={highestQuality?.url}
           proxy={proxy}
           poster={data?.cover}
+          data={data}
+          currentEpisode={episode}
           title={title?.english || title?.romaji || title?.native}
           subTitle={
             findEpisode && findEpisode?.title

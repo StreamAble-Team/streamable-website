@@ -5,7 +5,7 @@ import {
   MediaPlayer,
   MediaProvider,
 } from "@vidstack/react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import VideoBuffering from "./Buffering";
 import MediaPlayerUI from "./MediaPlayerUi";
 import { VideoContainer } from "./styles";
@@ -19,7 +19,10 @@ const VideoPlayer = ({
   subTitle,
   subtitles,
   skipTimes,
+  data,
+  currentEpisode,
 }) => {
+  const mediaPlayerRef = useRef(null);
   const [showSubtitles, setShowSubtitles] = useState(true);
 
   return (
@@ -29,6 +32,7 @@ const VideoPlayer = ({
         poster={poster || ""}
         userIdleDelay={4000}
         aspectRatio={16 / 9}
+        ref={mediaPlayerRef}
       >
         <MediaOutlet />
         <VideoBuffering />
@@ -43,6 +47,8 @@ const VideoPlayer = ({
           showSubtitles={showSubtitles}
           setShowSubtitles={setShowSubtitles}
           skipTimes={skipTimes}
+          data={data}
+          currentEpisode={currentEpisode}
         />
       </MediaPlayer>
     </VideoContainer>

@@ -1,5 +1,5 @@
 import sanitizer from "sanitize-html";
-import db from "./db";
+import { db } from "./db";
 
 export const textSanitizer = (textWithHTML) => {
   return sanitizer(textWithHTML, {
@@ -13,9 +13,9 @@ export const continueWatching = async (
   episodeNumber,
   watched = false
 ) => {
-  if (typeof anilistObject !== "object") return;
-  if (typeof watchedPercent !== "number") return;
-  if (typeof episodeNumber !== "number") return;
+  if (typeof anilistObject !== "object") return "Invalid Anilist Object";
+  if (typeof watchedPercent !== "number") return "Invalid Watched Percent";
+  if (typeof episodeNumber !== "number") return "Invalid Episode Number";
 
   try {
     const { id, episodes } = anilistObject;
@@ -25,7 +25,13 @@ export const continueWatching = async (
 
     const { id: episodeId } = findEpisode;
 
+    // check if episode is already in watched database
+    const checkIfWatched = await db.watched.get(episodeId);
+    if (checkIfWatched) return;
+
     if (watched || watchedPercent >= 85) {
+      await db.continueWatching.delete(episodeId);
+
       const putIntoDB = await db.watched.put(
         {
           anilistId: id,
@@ -53,6 +59,28 @@ export const continueWatching = async (
     if (!putIntoDB) return;
 
     return putIntoDB;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getContinueWatching = async (anilistObject, episodeNumber) => {
+  if (typeof anilistObject !== "object") return "Invalid Anilist Object";
+  if (typeof episodeNumber !== "number") return "Invalid Episode Number";
+
+  try {
+    const { id, episodes } = anilistObject;
+    const findEpisode = await episodes.find((e) => e.number === episodeNumber);
+
+    if (!findEpisode) return "No Episode Found";
+
+    const { id: episodeId } = findEpisode;
+
+    const getFromDB = await db.continueWatching.get(episodeId);
+
+    if (!getFromDB) return "No Episode Found";
+
+    return getFromDB;
   } catch (error) {
     console.log(error);
   }

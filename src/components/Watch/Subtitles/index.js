@@ -6,8 +6,8 @@ import { SubtitlesWrapper } from "./Subtitles.styles";
 
 const VideoSubtitles = ({ subtitles, showSubtitles, setShowSubtitles }) => {
   const router = useRouter();
-  const [subtitleHtml, setSubtitleHtml] = useState("");
   const media = useMediaPlayer();
+  const [subtitleHtml, setSubtitleHtml] = useState("");
 
   const { dub } = router.query;
 
